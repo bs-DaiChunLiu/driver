@@ -1,11 +1,10 @@
 <?php
 namespace app\cner\controller;
-use think\Controller;
 class Image extends Common
 {
     public function upload(){
         $file=request()->file('file');
-        $info = $file->rule('uniqid')->move(ROOT_PATH.'/public/images/category');
+        $info = $file->rule('uniqid')->move(ROOT_PATH.'public\images\ader');
         $filePath=config('u'). '/images/category/'.$info->getSaveName();
         if($info){
             return show(1,$filePath);
@@ -15,7 +14,7 @@ class Image extends Common
     }
     public function uploadAder(){
         $file=request()->file('file');
-        $info = $file->rule('uniqid')->move(ROOT_PATH.'/public/images/ader');
+        $info = $file->rule('uniqid')->move(ROOT_PATH.'public\images\ader');
         $filePath=config('u').'/images/ader/'.$info->getSaveName();
         if($info){
             return show(1,$filePath);
@@ -25,8 +24,8 @@ class Image extends Common
     }
     public function uploadImg(){
         $file=request()->file('file');
-        $info = $file->rule('uniqid')->move(ROOT_PATH.'/public/images/carclass');
-        $filePath= config('u').'/images/carclass/'.$info->getSaveName();
+        $info = $file->rule('uniqid')->move('E:/phpStudy/WWW/public/images/img');
+        $filePath= config('u').'/images/img/'.$info->getSaveName();
         if($info){
             return show(1,$filePath);
         }else{
@@ -35,7 +34,7 @@ class Image extends Common
     }
     public function uploadCallme(){
         $file=request()->file('file');
-        $info = $file->rule('uniqid')->move(ROOT_PATH.'/public/images/callme');
+        $info = $file->rule('uniqid')->move('E:/phpStudy/WWW/public/images/callme');
         $filePath= config('u').'/images/callme/'.$info->getSaveName();
         if($info){
             return show(1,$filePath);

@@ -2,7 +2,7 @@
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006~2016 http://thinkphp.cn All rights reserved.
+// | Copyright (c) 2006~2018 http://thinkphp.cn All rights reserved.
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
@@ -14,8 +14,6 @@ return [
     // | 应用设置
     // +----------------------------------------------------------------------
 
-    // 应用命名空间
-    'app_namespace'          => 'app',
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace
@@ -254,6 +252,5 @@ return [
         // 验证成功后是否重置
         'reset'    => true
     ],
-    'cc_url'=>'/cner/dc/driver',
-    'u'=>'/cner/dc/driver/public',
+    'u'=>'/cner/dc/driver/public'
 ];

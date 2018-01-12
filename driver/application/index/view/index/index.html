@@ -29,12 +29,8 @@
 <div class="head_des">
     <img src="/cner/dc/driver/public/static/home/images/d.jpg">
     <div class="head_banner">
-        <div class="guang"></div>
-        <div class="gw">大学生学车，就到叮叮驾考</div>
-        <div class="gw1">专注大学生的连锁校园驾校</div>
-        <div style="clear: both"></div>
         <div class="hl"><input name="" type="text" placeholder="输入手机号，立即免费试学"><button type="button" id="" name="">立即咨询</button></div>
-        <div class="hi"><img src="/cner/dc/driver/public/static/home/images/banner1.png"></div>
+        <img src="/cner/dc/driver/public/static/home/images/banner.png">
     </div>
     <div class="gj">
         <div class="gj_z">
@@ -441,7 +437,6 @@
         var myIcon = new BMap.Icon("/cner/dc/driver/public/static/home/images/markers.png", new BMap.Size(23,30));
         var marker = new BMap.Marker(point,{icon:myIcon});
         map.addOverlay(marker);
-        marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
         return marker;
     }
 

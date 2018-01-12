@@ -23,7 +23,8 @@ class Login extends Controller{
             }else{
                 return show(0,$validate->getError());
             }
+        }else{
+            return $this->fetch();
         }
-        return $this->fetch();
     }
 }

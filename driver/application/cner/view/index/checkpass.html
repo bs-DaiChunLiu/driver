@@ -25,22 +25,24 @@
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
 
-<title>班型设置</title>
+<title>密码设置</title>
 </head>
 <body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
+	<span class="c-gray en">&gt;</span>
+	修改密码
+	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+</nav>
 <div class="page-container">
 	<form action="" method="post" class="form form-horizontal" id="form1">
 		<div id="tab-category" class="HuiTab">
-			<div class="tabBar cl">
-				<span>基本设置</span>
-			</div>
 			<div class="tabCon">
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">
 						<span class="c-red">*</span>
-						班型名称：</label>
-					<div class="formControls col-xs-8 col-sm-4">
-						<input type="text" class="input-text" value="" placeholder="" id="" name="name">
+						原密码：</label>
+					<div class="formControls col-xs-8 col-sm-6">
+						<input type="password" class="input-text" value="" placeholder="" id="" name="o_password">
 					</div>
 					<div class="col-3">
 					</div>
@@ -48,59 +50,27 @@
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">
 						<span class="c-red">*</span>
-						班型简介：</label>
-					<div class="formControls col-xs-8 col-sm-4">
-						<input type="text" class="input-text" value="" placeholder="" id="" name="des">
+						新密码：</label>
+					<div class="formControls col-xs-8 col-sm-6">
+						<input type="password" class="input-text" value="" placeholder="" id="" name="n_password">
 					</div>
 					<div class="col-3">
 					</div>
 				</div>
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">
-						背景图：</label>
-					<div class="formControls col-xs-8 col-sm-9">
+						<span class="c-red">*</span>
+						确认密码：</label>
+					<div class="formControls col-xs-8 col-sm-6">
 						<div class="uploader-thum-container">
-							<input type="hidden"  placeholder="" id="main_img_url" name="img" value="">
-							<div id="fileList" class="uploader-list"></div>
-							<div id="filePicker">选择图片</div>
-							<div style="clear: both"></div>
-							<img src="" id="thumb" style="display: none;width: 400px">
+							<input type="password" class="input-text" value="" placeholder="" id="" name="password">
 						</div>
-					</div>
-				</div>
-				<div class="row cl">
-					<label class="form-label col-xs-4 col-sm-2">
-						<span class="c-red">*</span>
-						班型说明：</label>
-					<div class="formControls col-xs-8 col-sm-8">
-						<div class="uploader-thum-container">
-							<textarea id="content" name="suggest"></textarea>
-						</div>
-					</div>
-				</div>
-				<div class="row cl">
-					<label class="form-label col-xs-4 col-sm-2">
-						<span class="c-red">*</span>
-						班型价格：</label>
-					<div class="formControls col-xs-8 col-sm-4">
-						<input type="text" class="input-text" value="" placeholder="" id="" name="price">
-					</div>
-					<div class="col-3">
-					</div>
-				</div>
-				<div class="row cl">
-					<label class="form-label col-xs-4 col-sm-2">
-						班型排序：</label>
-					<div class="formControls col-xs-8 col-sm-4">
-						<input type="text" class="input-text" value="" placeholder="" id="" name="sort">
-					</div>
-					<div class="col-3">
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row cl">
-			<div class="col-9 col-offset-3">
+			<div class="col-9 col-offset-2">
 				<input class="btn btn-primary radius" type="button" id="btn" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
 			</div>
 		</div>
@@ -158,7 +128,7 @@ $(function(){
 		swf: '__PUBLIC__/lib/webuploader/0.1.5/Uploader.swf',
 
 		// 文件接收服务端。
-		server: "{:url('Image/uploadImg')}",
+		server: "{:url('Image/uploadCallme')}",
 
 		// 选择文件的按钮。可选。
 		// 内部根据当前运行是创建，可能是input元素，也可能是flash.
@@ -192,15 +162,15 @@ $(function(){
 		$(data).each(function(i){
 			postData[this.name]=this.value;
 		});
-		var url="{$Think.config.cc_url}/cner/carclass/add";
-		var jump="{$Think.config.cc_url}/cner/carclass";
+		var url="{$Think.config.cc_url}/cner/index/checkpass";
+		var jump="{$Think.config.cc_url}/cner/";
 		$.post(url,postData,function(res){
 			if(res.status==1){
 				layer.open({
 					content : res.message,
 					icon : 1,
 					yes : function(){
-						parent.location.href=jump;
+						top.location.href=jump;
 					},
 				});
 			}else if(res.status==0){

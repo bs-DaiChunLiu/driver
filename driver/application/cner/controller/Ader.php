@@ -1,35 +1,20 @@
 <?php
 namespace app\cner\controller;
+use think\Request;
 class Ader extends Common{
     public function index(){
         $res=db('ader')->select();
-        $this->assign('ader',$res);
+        $this->assign('aders',$res);
         return $this->fetch();
-    }
-    public function add(){
-        if(request()->isAjax()){
-            $input=input('post.');
-            $validate=validate('Validates');
-            if($validate->scene('addAder')->check($input)){
-                $res=db('ader')->insert($input);
-                if($res){
-                    return show(1,'添加成功');
-                }else{
-                    return show(0,'添加失败');
-                }
-            }else{
-                return show(0,$validate->getError());
-            }
-        }else{
-            return $this->fetch();
-        }
     }
     public function edit(){
         if(request()->isAjax()){
             $input=input('post.');
             $id=input('get.id');
+            echo input('id');
+            die;
             $validate=validate('Validates');
-            if($validate->scene('addAder')->check($input)){
+            if($validate->scene('editAder')->check($input)){
                 $res=db('ader')->where('id',$id)->update($input);
                 if($res){
                     return show(1,'修改成功');
@@ -41,18 +26,11 @@ class Ader extends Common{
             }
         }else{
             $id=input('get.id');
-            $res=db('ader')->find($id);
-            $this->assign('ader',$res);
+            $res=db('ader')->where('id',$id)->select();
+            print_r($id);
+            die;
+            $this->assign('aders',$res);
             return $this->fetch();
-        }
-    }
-    public function delete(){
-        $id=input('get.id');
-        $res=db('ader')->where('id',$id)->delete();
-        if($res){
-            return true;
-        }else{
-            return false;
         }
     }
 }

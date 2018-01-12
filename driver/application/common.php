@@ -18,10 +18,10 @@ function getTree($arr,$pid=0,$level=0){
     }
     return $tree;
 }
-function getCateStatus($data){
+function getAderStatus($data){
     if($data==0){
-        echo '显示';
-    }else{
-        echo '隐藏';
+        echo '顶部广告';
+    }elseif ($data==1){
+        echo '底部广告';
     }
 }

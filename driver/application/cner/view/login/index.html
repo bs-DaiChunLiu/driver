@@ -43,11 +43,11 @@
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
           <input class="input-text size-L" type="text" name="code" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
-          <img src="{:captcha_src()}" id="code_img" style="cursor: pointer" onclick="this.src='{:captcha_src()}?'+Math.random()">  </div>
+          <img src="{:captcha_src()}" id="code_img" style="cursor: pointer" onclick="this.src='{:captcha_src()}?'+Math.random()"></div>
       </div>
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
-          <input id="btn" name="" type="button" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
+          <input id="btn" type="button" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
           <input name="" type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
         </div>
       </div>
@@ -58,6 +58,7 @@
 <script type="text/javascript" src="__PUBLIC__/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/static/h-ui/js/H-ui.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/lib/layer/2.4/layer.js"></script>
+</body>
 <script>
   $('#btn').click(function(){
     var data=$('#form1').serializeArray();
@@ -65,8 +66,8 @@
     $(data).each(function(i){
       postData[this.name]=this.value;
     });
-    var url="{$Think.config.cc_url}/cner/login";
-    var jump="{$Think.config.cc_url}/cner/index";
+    var url="{:url('index')}";
+    var jump="{:url('Index/index')}";
     $.post(url,postData,function(res){
       if(res.status==1){
         layer.open({
@@ -83,6 +84,4 @@
     },'JSON');
   })
 </script>
-
-</body>
 </html>

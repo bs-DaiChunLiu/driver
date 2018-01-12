@@ -11,8 +11,37 @@ class Index extends Common{
         session(null);
         $this->redirect('Login/index');
     }
+    public function checkpass(){
+        if(request()->isAjax()){
+            $input=input('post.');
+            $validate=validate('Validates');
+            if($validate->scene('checkpass')->check($input)){
+                $res=db('admin')->find();
+                $pass=$res['password'];
+                if(md5($input['o_password'])==$pass){
+                    $passres=db('admin')->where('id',1)->update(['password'=>md5($input['password'])]);
+                    if($passres){
+                        return show(1,'修改成功');
+                    }else{
+                        return show(0,'修改失败');
+                    }
+                }else{
+                    return show(0,'原密码错误');
+                }
+            }else{
+                return show(0,$validate->getError());
+            }
+        }else{
+            return $this->fetch();
+        }
+    }
     public function clearCache(){
-        $this->sss();
+        $res=$this->sss();
+        if($res==1){
+            return show(1,'请理成功');
+        }else{
+            return show(0,'清理失败');
+        }
     }
     public function sss($path='./runtime/temp', $delDir = true) {
         $handle = opendir($path);
