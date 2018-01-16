@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <!--[if lt IE 9]>
 <script type="text/javascript" src="__PUBLIC__/lib/html5shiv.js"></script>
-<script type="text/javascript" src="__PUBLIC__/lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
 <![endif]-->
 <link href="__PUBLIC__/static/h-ui/css/H-ui.min.css" rel="stylesheet" type="text/css" />
 <link href="__PUBLIC__/static/h-ui.admin/css/H-ui.login.css" rel="stylesheet" type="text/css" />
@@ -18,9 +18,9 @@
 <script type="text/javascript" src="__PUBLIC__/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>后台登录 - H-ui.admin v3.1</title>
-<meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
-<meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+<title></title>
+<meta name="keywords" content="">
+<meta name="description" content="">
 </head>
 <body>
 <input type="hidden" id="TenantId" name="TenantId" value="" />
@@ -42,9 +42,10 @@
       </div>
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
-          <input class="input-text size-L" type="text" name="code" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
-          <img src="{:captcha_src()}" id="code_img" style="cursor: pointer" onclick="this.src='{:captcha_src()}?'+Math.random()"></div>
+          <input class="input-text size-L" name="code" type="text" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
+          <img src="{:captcha_src()}" id="code_img" style="cursor: pointer" onclick="this.src='{:captcha_src()}?'+Math.random()">
       </div>
+        <div class="row cl"></div>
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
           <input id="btn" type="button" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
@@ -54,7 +55,7 @@
     </form>
   </div>
 </div>
-<div class="footer">Copyright 你的公司名称 by H-ui.admin v3.1</div>
+<div class="footer"></div>
 <script type="text/javascript" src="__PUBLIC__/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/static/h-ui/js/H-ui.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/lib/layer/2.4/layer.js"></script>

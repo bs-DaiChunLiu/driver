@@ -37,51 +37,7 @@
                 <div class="gj_r"><img src="/cner/dc/driver/public/static/home/images/gr.png"></div>
             </div>
             <div class="co-text">
-                <p class="f22 fb">年龄条件</p>
-                <p class="mt10">1、申请小型汽车、小型自动挡汽车、残疾人专用小型自动挡载客汽车、轻便摩托车准驾车型的学员，在18周岁以上、70周岁以下</p>
-                <p>2、申请大型货车的学员，在20周岁以上，50周岁以下</p>
-
-                <p class="f22 fb mt20">身体条件</p>
-                <p class="mt10">1、身高：申请大型客车、牵引车、城市公交车、大型货车、无轨电车准驾车型的，身高为155厘米以上。申请中型客车准驾车型的</p>
-                <p class="ml20">，身高为150厘米以上</p>
-                <p>2、视力：申请大型客车、牵引车、城市公交车、中型客车、大型货车、无轨电车或者有轨电车准驾车型的，两眼裸视力或者矫正视</p>
-                <p class="ml20">力达到对数视力表5.0以上。申请其他准驾车型的，两眼裸视力或者矫正视力达到对数视力表4.9以上</p>
-                <p>3、辨色力：无红绿色盲</p>
-                <p>4、听力：两耳分别距音叉50厘米能辨别声源方向。有听力障碍但佩戴助听设备能够达到以上条件的，可以申请小型汽车、小型自动</p>
-                <p class="ml20">挡汽车准驾车型的机动车驾驶证</p>
-                <p>5、上肢：双手拇指健全，每只手其他手指必须有三指健全，肢体和手指运动功能正常。但手指末节残缺或者右手拇指缺失的，可以</p>
-                <p class="ml20">申请小型汽车、小型自动挡汽车、低速载货汽车、三轮汽车准驾车型的机动车驾驶证</p>
-                <p>6、下肢：双下肢健全且运动功能正常，不等长度不得大于5厘米。但左下肢缺失或者丧失运动功能的，可以申请小型自动挡汽车准</p>
-                <p class="ml20">驾车型的机动车驾驶证。右下肢、双下肢缺失或者丧失运动功能但能够自主坐立的，可以申请残疾人专用小型自动挡载客汽车准</p>
-                <p class="ml20">驾车型的机动车驾驶证</p>
-                <p>7、躯干、颈部：无运动功能障碍</p>
-
-
-                <p class="f22 fb mt20">以下情形不得申请</p>
-                <p class="mt10">1、有器质性心脏病、癫痫病、美尼尔氏症、眩晕症、癔病、震颤麻痹、精神病、痴呆以及影响肢体活动的神经系统疾病等妨碍安全</p>
-                <p class="ml20">驾驶疾病的</p>
-                <p>2、三年内有吸食、注射毒品行为或者解除强制隔离戒毒措施未满三年，或者长期服用依赖性精神药品成瘾尚未戒除的</p>
-                <p>3、造成交通事故后逃逸构成犯罪的</p>
-                <p>4、醉酒驾驶机动车或者饮酒后驾驶营运机动车依法被吊销机动车驾驶证未满五年的</p>
-                <p>5、醉酒驾驶营运机动车依法被吊销机动车驾驶证未满十年的</p>
-                <p>6、因其他情形依法被吊销机动车驾驶证未满二年的</p>
-                <p>7、驾驶许可依法被撤销未满三年的</p>
-                <p>8、法律、行政法规规定的其他情形</p>
-
-                <p class="f22 fb mt20">资料准备</p>
-                <p class="mt10">(一)本地户口</p>
-                <p>1、身份证及复印件2份（正反面）</p>
-                <p>2、指定医院体检证明</p>
-                <p>3、3张白底公安联网备案</p>
-                <p>4、摩托车增驾者（需驾龄满一年）需提供复印件两份</p>
-                <p>5、驾照体检表</p>
-                <p>6、驾照申请表</p>
-
-                <p class="mt10">(二)非本地户口</p>
-                <p>1、身份证及复印件2份（正反面）</p>
-                <p>2、3张白底公安联网备案 </p>
-                <p>3、居住证原件或者登记凭证复印件2份（正反面）</p>
-                <p>4、驾照体检表</p>
+                {$apply.b_content}
             </div>
         </div>
     </div>
@@ -95,74 +51,21 @@
             </div>
             <div class="xStep">
                 <div class="xsli">
-                    <div class="stp cur">
-                        <p></p>
-                        <p>办理居住证</p>
-                        <span>1</span>
+                    {volist name="f" id="fs"}
+                    <div class="stp {if condition="$key eq 0"}cur{/if}">
+                        <p>{$fs.name}</p>
+                        <span>{$key+1}</span>
                         <i class="ico ico14"></i>
                     </div>
-                    <div class="stp">
-                        <p>体检/照相/面签</p>
-                        <span>2</span>
-                        <i class="ico ico14"></i>
-                    </div>
-                    <div class="stp">
-                        <p>科目一</p>
-                        <span>3</span>
-                        <i class="ico ico14"></i>
-                    </div>
-                    <div class="stp">
-                        <p>科目二</p>
-                        <span>4</span>
-                        <i class="ico ico14"></i>
-                    </div>
-                    <div class="stp">
-                        <p>科目三</p>
-                        <span>5</span>
-                        <i class="ico ico14"></i>
-                    </div>
-                    <div class="stp">
-                        <p></p>
-                        <p>科目四</p>
-                        <span>6</span>
-                        <i class="ico ico14"></i>
-                    </div>
-                    <div class="stp">
-                        <p></p>
-                        <p>领取驾照</p>
-                        <span>7</span>
-                        <i class="ico ico14"></i>
-                    </div>
+                    {/volist}
                 </div>
             </div>
             <div class="xText">
-                <div class="lit" style="display:block">
-                    <p>1、到指定医院体检；</p>
-                    <p>2、到叮叮驾考线下服务站办理入学</p>
+                {volist name="f" id="fw"}
+                <div class="lit" {if condition='$key eq 0'}style='display:block'{/if}>
+                    {$fw.content}
                 </div>
-                <div class="lit">
-                    <p>1、学习驾驶理论；</p>
-                    <p>3、按时参加理论考试。</p>
-                </div>
-                <div class="lit">
-                    <p>1、联系叮叮教学顾问，确定练车场地及教练；</p>
-                    <p>2、收到教练电话，约定练车时间；</p>
-                </div>
-                <div class="lit">
-                    <p>1、联系叮叮教学顾问，确定练车场地及教练；</p>
-                    <p>2、收到教练电话，约定练车时间；</p>
-                </div>
-                <div class="lit">
-                    <p>1、联系叮叮教学顾问，确定练车场地及教练；</p>
-                    <p>2、收到教练电话，约定练车时间；</p>
-                </div>
-                <div class="lit">
-                    <p>1、联系叮叮教学顾问，确定练车场地及教练；</p>
-                    <p>2、收到教练电话，约定练车时间；</p>
-                </div>
-                <div class="lit">
-                    <p>恭喜你，跻身老司机！</p>
-                </div>
+                {/volist}
             </div>
         </div>
     </div>
@@ -175,24 +78,7 @@
                 <div class="gj_r"><img src="/cner/dc/driver/public/static/home/images/gr.png"></div>
             </div>
             <div class="co-text">
-                <p class="f22 fb">1、叮叮驾考与一般驾校有什么不同？</p>
-                <p class="mt10">叮叮驾考是专注大学生的校园连锁型校，为学生量身设计更好的学车方案，让学车不只是学车</p>
-                <p class="f22 fb mt20">2、报名缴费后还会收取其他费用吗？</p>
-                <p class="mt10">会。体检费30元、照相费20元...该收的钱每笔都会在合同上注明，确保价格真实透明</p>
-                <p class="f22 fb mt20">3、怎么报名呢？</p>
-                <p class="mt10">在首页输入联系方式，提交后学车天使会直接与您联系，上门或到叮叮报名点签署协议，当面付款</p>
-                <p class="f22 fb mt20">4、报名后多久拿证？</p>
-                <p class="mt10">理想情况下，最快36天拿证：从报名到考科目一需7天，科一到科二需17天，科二到科三需13天，一次性通过情况下最快36天拿证</p>
-                <p class="f22 fb mt20">5、如何预约练车？</p>
-                <p class="mt10">报名后会有专门的学员微信群，里面有学车天使、教学总监、教练等工作人员，在微信群内提前一天发信息预约即可</p>
-                <p class="f22 fb mt20">6、如何预约考试？</p>
-                <p class="mt10">由教练与学员沟通协调考试时间后预约，若自己想单独参加考试，也可告知教练预约</p>
-                <p class="f22 fb mt20">7、学车过程中出现问题找谁？</p>
-                <p class="mt10">找学车小天使。有学车问题，我们会在工作时间1小时内给出处理结果</p>
-                <p class="f22 fb mt20">8、价格可以优惠不？</p>
-                <p class="mt10">首页报名价格为官方指导价格，我们会保证品质，但不接受议价</p>
-                <p class="f22 fb mt20">9、如何退费？</p>
-                <p class="mt10">报名7天内可无条件退款，超过7天的退费细节可参考合同内容</p>
+                {$apply.c_content}
             </div>
         </div>
     </div>
@@ -229,10 +115,10 @@
                         <p><a href="">招聘动态</a></p>
                     </div>
                 </li>
-                <li>
+                <li style="text-align: right">
                     <img src="/cner/dc/driver/public/static/home/images/gzh.png">
                 </li>
-                <li>
+                <li style="text-align: right">
                     <img src="/cner/dc/driver/public/static/home/images/wx.png">
                 </li>
             </ul>

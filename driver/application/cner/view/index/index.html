@@ -28,8 +28,8 @@
 <body>
 <header class="navbar-wrapper">
 	<div class="navbar navbar-fixed-top">
-		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="{:url('index')}">后台管理</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/">后台管理</a>
-			<a class="logo navbar-logo f-l mr-10 hidden-xs" href="{:url('index/index/index')}">前台</a>
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="{:url('Index/index')}">后台管理</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="{:url('Index/index')}">后台管理</a>
+			<a class="logo navbar-logo f-l mr-10 hidden-xs" href="{:url('index/Index/index')}" target="_blank">前台</a>
 			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
 		<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 			<ul class="cl">
@@ -37,7 +37,7 @@
 				<li class="dropDown dropDown_hover">
 					<a href="#" class="dropDown_A">{$Request.session.user.account}<i class="Hui-iconfont">&#xe6d5;</i></a>
 					<ul class="dropDown-menu menu radius box-shadow">
-						<li><a href="{:url('loginout')}">退出</a></li>
+						<li><a href="{:url('Index/loginout')}">退出</a></li>
 				</ul>
 			</li>
 				<li id="Hui-skin" class="dropDown right dropDown_hover"> <input type="button" id="clearrun" style="background: none;border: none;color: #fff;cursor: pointer" class="dropDown_A" title="缓存清理" value="缓存清理">
@@ -53,34 +53,39 @@
 			<dt><i class="Hui-iconfont">&#xe681;</i> 首页管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{:url('Ader/index')}" data-title="栏目管理" href="javascript:void(0)">顶部广告区</a></li>
-			    </ul>
-		    </dd>
+					<li><a data-href="{:url('Ader/index')}" data-title="广告管理" href="javascript:void(0)">广告管理</a></li>
+					<li><a data-href="{:url('Suggest/index')}" data-title="公司介绍" href="javascript:void(0)">公司介绍</a></li>
+					<li><a data-href="{:url('Ensure/index')}" data-title="三大保障" href="javascript:void(0)">三大保障</a></li>
+					<li><a data-href="{:url('Goodness/index')}" data-title="七大优势" href="javascript:void(0)">七大优势</a></li>
+					<li><a data-href="{:url('Carclass/index')}" data-title="学车班型" href="javascript:void(0)">学车班型</a></li>
+                    <li><a data-href="{:url('Assess/index')}" data-title="学员评价" href="javascript:void(0)">学员评价</a></li>
+					<li><a data-href="{:url('Medium/index')}" data-title="媒体声音" href="javascript:void(0)">媒体声音</a></li>
+			</ul>
+		</dd>
 	</dl>
 		<dl id="menu-picture">
-			<dt><i class="Hui-iconfont">&#xe612;</i> 广告管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe612;</i> 报名须知管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{$Think.config.cc_url}/cner/ader" data-title="广告列表" href="javascript:void(0)">广告列表</a></li>
+					<li><a data-href="{:url('Apply/index')}" data-title="报名条件及常见问题" href="javascript:void(0)">报名条件及常见问题</a></li>
+					<li><a data-href="{:url('Apply/flow')}" data-title="学车流程" href="javascript:void(0)">学车流程</a></li>
 			</ul>
 		</dd>
 	</dl>
 		<dl id="menu-product">
-			<dt><i class="Hui-iconfont">&#xe616;</i> 文章管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe616;</i> 关于我们管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{$Think.config.cc_url}/cner/article" data-title="文章列表" href="javascript:void(0)">文章列表</a></li>
-					<li><a data-href="{$Think.config.cc_url}/cner/img" data-title="图文列表" href="javascript:;">图片文章列表</a></li>
-					<li><a data-href="{$Think.config.cc_url}/cner/swords" data-title="首页文字列表" href="javascript:;">首页文字列表</a></li>
+					<li><a data-href="{:url('Aboutme/index')}" data-title="关于我们" href="javascript:void(0)">关于我们</a></li>
+					<li><a data-href="{:url('Aboutme/leader')}" data-title="领导视察" href="javascript:void(0)">领导视察</a></li>
 			</ul>
 		</dd>
 	</dl>
 		<dl id="menu-word">
-			<dt><i class="Hui-iconfont">&#xe692;</i> 表单管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe692;</i> 加入我们<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{$Think.config.cc_url}/cner/word" data-title="留言列表" href="javascript:;">留言列表</a></li>
-                    <li><a data-href="{$Think.config.cc_url}/cner/joinme" data-title="加入我们列表" href="javascript:;">加入我们列表</a></li>
+					<li><a data-href="{:url('Joinme/index')}" data-title="加入我们" href="javascript:;">加入我们</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -198,11 +203,10 @@ function member_add(title,url,w,h){
 	layer_show(title,url,w,h);
 }
 $('#clearrun').click(function(){
-	var url="{:url('clearCache')}";
-	var jump="{:url('index')}";
+	var url="{:url('Index/clearCache')}";
 	$.post(url,'',function(res){
 		if(res.status==1){
-			layer.msg(res.message, {icon: 6});
+			layer.msg(res.message,{icon: 6});
 		}else if(res.status==0){
 			layer.msg(res.message,{icon: 5});
 		}

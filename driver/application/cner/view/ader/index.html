@@ -1,53 +1,52 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="renderer" content="webkit|ie-comp|ie-stand">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-	<meta http-equiv="Cache-Control" content="no-siteapp" />
-	<!--[if lt IE 9]>
-	<script type="text/javascript" src="__PUBLIC__/lib/html5shiv.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/lib/respond.min.js"></script>
-	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui/css/H-ui.min.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui.admin/css/H-ui.admin.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/lib/Hui-iconfont/1.0.8/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui.admin/skin/default/skin.css" id="skin" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui.admin/css/style.css" />
-	<!--[if IE 6]>
-	<script type="text/javascript" src="__PUBLIC__/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
-	<script>DD_belatedPNG.fix('*');</script>
-	<![endif]-->
-	<title>首页管理</title>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="__PUBLIC__/lib/html5shiv.js"></script>
+<script type="text/javascript" src="__PUBLIC__/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="__PUBLIC__/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>广告管理</title>
 </head>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
 	<span class="c-gray en">&gt;</span>
-	顶部广告管理
+	广告管理
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 </nav>
 <div class="page-container">
 	<div class="mt-20">
 		<table class="table table-border table-bordered table-hover table-bg table-sort">
 			<thead>
-			<tr class="text-c">
-				<th>广告图片</th>
-				<th>广告类型</th>
-				<th width="100">操作</th>
-			</tr>
+				<tr class="text-c">
+					<th>缩略图</th>
+					<th>广告类型</th>
+					<th width="100">操作</th>
+				</tr>
 			</thead>
 			<tbody>
-			{volist name='aders' id='ader'}
-			<tr class="text-c">
-				<td class="text-l">
-					<img src="{$ader.img}" width="300px" height="150px">
-				</td>
-				<td>{$ader.type|getAderStatus}</td>
-				<td class="f-14"><a title="编辑" href="javascript:;" onclick="product_edit('栏目编辑','/cner/dc/driver/cner/ader/edit?id={$ader.id}',{$ader.id},'700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-				</td>
-			</tr>
-			{/volist}
+			{volist name="ader" id="aders"}
+				<tr class="text-c">
+					<td class="text-c"><img src="{$aders.img}" height="100px"></td>
+					<td>{if condition="$aders['type'] eq 0"}顶部广告{else /}底部广告{/if}</td>
+					<td class="f-14">
+						<a title="编辑" href="javascript:;" onclick="product_edit('栏目编辑','{:url('edit',['id'=>$aders.id])}',{$aders.id},'700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+					</td>
+				</tr>
+            {/volist}
 			</tbody>
 		</table>
 	</div>
@@ -64,32 +63,15 @@
 <script type="text/javascript" src="__PUBLIC__/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
 
-	/*系统-栏目-添加*/
-	function system_category_add(title,url,w,h){
-		layer_show(title,url,w,h);
-	}
-	/*系统-栏目-编辑*/
-	function system_category_edit(title,url,id,w,h){
-		layer_show(title,url,w,h);
-	}
-
-	/*产品-编辑*/
-	function product_edit(title,url,id){
-		var index = layer.open({
-			type: 2,
-			title: title,
-			content: url
-		});
-		layer.full(index);
-	}
-	function product_add(title,url){
-		var index = layer.open({
-			type: 2,
-			title: title,
-			content: url
-		});
-		layer.full(index);
-	}
+/*产品-编辑*/
+function product_edit(title,url,id){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
 </script>
 </body>
 </html>

@@ -38,7 +38,7 @@ class Index extends Common{
     public function clearCache(){
         $res=$this->sss();
         if($res==1){
-            return show(1,'请理成功');
+            return show(1,'清理成功');
         }else{
             return show(0,'清理失败');
         }

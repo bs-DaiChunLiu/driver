@@ -1,8 +1,7 @@
 <?php
 namespace app\cner\controller;
 use think\Controller;
-class Common extends Controller
-{
+class Common extends Controller{
     public function __construct()
     {
         parent::__construct();

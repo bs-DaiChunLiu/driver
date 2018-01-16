@@ -1,0 +1,41 @@
+<div class="footer">
+      <div class="foi">
+          <div class="foi_t">输入手机号，立即免费试学</div>
+          <div class="foi_k">
+              <div class="fl"><input name="" type="text" placeholder="输入手机号，立即免费试学"><button type="button" id="" name="">立即咨询</button></div>
+          </div>
+      </div>
+      <div class="fa">
+          <div class="cbLink">
+              <ul class="clearfix">
+                  <li>
+                      <p class="ti">报名须知</p>
+                      <div class="ci">
+                          <p><a href="{:url('Index/applynotice')}">报名条件</a></p>
+                          <p><a href="{:url('Index/applynotice')}">学车流程</a></p>
+                          <p><a href="{:url('Index/applynotice')}">常见问题</a></p>
+                      </div>
+                  </li>
+                  <li>
+                      <p class="ti">关于我们</p>
+                      <div class="ci">
+                          <p><a href="{:url('Index/aboutme')}">我们是谁</a></p>
+                          <p><a href="{:url('Index/aboutme')}">媒体报道</a></p>
+                          <p><a href="{:url('Index/aboutme')}">领导考察</a></p>
+                      </div>
+                  </li>
+                  <li>
+                      <p class="ti">加入我们</p>
+                      <div class="ci">
+                          <p><a href="{:url('Index/joinme')}">招聘动态</a></p>
+                      </div>
+                  </li>
+                  {volist name="rw" id="r"}
+                  <li style="text-align: right">
+                      <img src="{$r.img}">
+                  </li>
+                  {/volist}
+              </ul>
+          </div>
+      </div>
+  </div>

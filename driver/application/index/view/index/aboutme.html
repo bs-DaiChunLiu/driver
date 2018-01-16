@@ -37,35 +37,7 @@
                 <div class="gj_r"><img src="/cner/dc/driver/public/static/home/images/gr.png"></div>
             </div>
             <div class="co-text ct">
-                <p class="f22 fb">公司简介</p>
-                <p class=" f14 mt10">&nbsp&nbsp&nbsp&nbsp叮叮驾考创办于2015年5月，属于四川省人民政府、团委、人社厅、教育厅成立的四川省双创中心孵化企业，是一所专注大学生</p>
-                <p class="mt5">的直营连锁驾校，既有线上软件预约报名、微博微信等自媒体服务，也有一套完整且专业的线下驾校培训体系</p>
-                <p class="mt5">&nbsp&nbsp&nbsp&nbsp作为全省大学生创业代表项目，被列为四川省双创中心10佳孵化企业，获得成都壹柒玖捌基金75万人民币和华莱士股东100万人</p>
-                <p class="mt5">民币天使投资</p>
-                <p class="mt5">&nbsp&nbsp&nbsp&nbsp目前服务大学生学员超过5000人，覆盖30余所高校，以“拯救大学生学车不开心”为理念做一所大学生专属的互联网直营驾</p>
-                <p class="mt5">校，已成为部分高校学生学车首选品牌之一</p>
-
-
-                <p class="f22 fb mt20">公司使命</p>
-                <p class="mt10">为大学生利益而努力创新</p>
-
-
-                <p class="f22 fb mt20">公司愿景</p>
-                <p class="mt10">做中国最具口碑的连锁驾校品牌，做一个普惠大学生的品牌</p>
-
-
-                <p class="f22 fb mt20">创业历程</p>
-                <p class="mt10">2015年5月，叮叮驾考 PC 端（ddjiakao.com）在锦江学院首次面世，迎来了200+名学员</p>
-                <p class="mt5">2015年11月，首期获得50万元天使轮融资</p>
-                <p class="mt5">2015年12月，成立四川第一家专注大学生的互联网直营驾校，开启驾考互联网直营新时代</p>
-                <p class="mt5">2016 年3月，获眉山电视台、华西都市报、腾讯新闻等主流媒体专访报道</p>
-                <p class="mt5">2016 年4月，开始加盟和直营并存的连锁经营模式，学员数量突破1000人</p>
-                <p class="mt5">2016 年12月，迎来华莱士总公司股东的天使轮融资100万元</p>
-                <p class="mt5">2017 年3月，入驻四川省大学生创新创业中心加速区</p>
-                <p class="mt5">2017 年5月，获成都 1796 投资中心75万元天使+轮融资，估值1500万元</p>
-                <p class="mt5">2017年6月，开放挂科免补考费班型，成为成都首家为学员报销补考费的驾校</p>
-                <p class="mt5">2017年8月，上线小程序“叮叮驾考+”，推出叮叮学员福利卡-黄卡</p>
-                <p class="mt5">2017年10月，覆盖高校达到30所，累计学员数量超过5000人，黄卡商家数量达1000家；被四川电视台新闻联播报道</p>
+                {$am.content}
             </div>
         </div>
     </div>
@@ -78,28 +50,17 @@
         </div>
         <div style="height: 50px;width: 100%"></div>
         <div class="pjd">
+            {volist name="ms" id="m"}
             <div class="pj_dd">
                 <div class="pj_dt">
-                    <a href="http://www.qq.com/" target="_blank"><img src="/cner/dc/driver/public/static/home/images/wb1.png"  onmouseover='src="/cner/dc/driver/public/static/home/images/wb1_x.png"' onmouseout='src="/cner/dc/driver/public/static/home/images/wb1.png"'></a>
+                    <a href="{$m.url}" target="_blank"><img src="{$m.img_s}"  onmouseover='src="{$m.img_h}"' onmouseout='src="{$m.img_s}"'></a>
                 </div>
             </div>
-            <div class="pj_dd">
-                <div class="pj_dt">
-                    <a href="http://www.qq.com/" target="_blank"><img src="/cner/dc/driver/public/static/home/images/wb2.png" onmouseover='src="/cner/dc/driver/public/static/home/images/wb2_x.png"' onmouseout='src="/cner/dc/driver/public/static/home/images/wb2.png"'></a>
-                </div>
-            </div>
-            <div class="pj_dd">
-                <div class="pj_dt">
-                    <a href="http://www.qq.com/" target="_blank"><img src="/cner/dc/driver/public/static/home/images/wb3.png" onmouseover='src="/cner/dc/driver/public/static/home/images/wb3_x.png"' onmouseout='src="/cner/dc/driver/public/static/home/images/wb3.png"'></a>
-                </div>
-            </div>
-            <div class="pj_dd">
-                <div class="pj_dt">
-                    <a href="http://www.qq.com/" target="_blank"><img src="/cner/dc/driver/public/static/home/images/wb4.png" onmouseover='src="/cner/dc/driver/public/static/home/images/wb4_x.png"' onmouseout='src="/cner/dc/driver/public/static/home/images/wb4.png"'></a>
-                </div>
-            </div>
+            {/volist}
         </div>
     </div>
+    <div style="clear: both;"></div>
+    <div style="width: 100%;height: 50px"></div>
     <!--领导视察-->
     <div class="baoxz">
         <div class="auto">
@@ -108,33 +69,26 @@
                 <div class="gj_h">领导视察</div>
                 <div class="gj_r"><img src="/cner/dc/driver/public/static/home/images/gr.png"></div>
             </div>
+            <div style="clear: both"></div>
             <div class="co-text ct" style="height: 1223px">
                 <div class="ldl">
-                    <div class="ldl_i"><img src="/cner/dc/driver/public/static/home/images/ld1.jpg"></div>
-                    <div class="ldl_t">2015年时任眉山市委常委、常务副市长（右一）访谈叮叮创始人</div>
-                    <div class="ldl_i"><img src="/cner/dc/driver/public/static/home/images/ld2.jpg"></div>
-                    <div class="ldl_t">2015年时任眉山市委常委、常务副市长（右一）访谈叮叮创始人</div>
-                    <div class="ldl_i"><img src="/cner/dc/driver/public/static/home/images/ld3.jpg"></div>
-                    <div class="ldl_t">2015年时任眉山市委常委、常务副市长（右一）访谈叮叮创始人</div>
+                    {volist name="ll" id="l"}
+                    <div class="ldl_i"><img src="{$l.img}"></div>
+                    <div class="ldl_t">{$l.des}}</div>
+                    {/volist}
                 </div>
                 <div class="ldr">
-                    <div class="ldr_i"><img src="/cner/dc/driver/public/static/home/images/ld4.jpg"></div>
+                    {volist name="lr" id="ls"}
+                    <div class="ldr_i"><img src="{$ls.img}"></div>
                     <div style="clear: both"></div>
-                    <div class="ldr_t">山东省委书记刘家义到叮叮总部考察项目</div>
-                    <div class="ldr_i"><img src="/cner/dc/driver/public/static/home/images/ld5.jpg"></div>
-                    <div style="clear: both"></div>
-                    <div class="ldr_t">山东省委书记刘家义到叮叮总部考察项目</div>
-                    <div class="ldr_i"><img src="/cner/dc/driver/public/static/home/images/ld6.jpg"></div>
-                    <div style="clear: both"></div>
-                    <div class="ldr_t">山东省委书记刘家义到叮叮总部考察项目</div>
-                    <div class="ldr_i"><img src="/cner/dc/driver/public/static/home/images/ld7.jpg"></div>
-                    <div style="clear: both"></div>
-                    <div class="ldr_t">山东省委书记刘家义到叮叮总部考察项目</div>
+                    <div class="ldr_t">{$l.des}}</div>
+                    {/volist}
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div style="clear: both;"></div>
 <div class="footer">
     <div class="foi">
         <div class="foi_t">输入手机号，立即免费试学</div>
@@ -167,10 +121,10 @@
                         <p><a href="">招聘动态</a></p>
                     </div>
                 </li>
-                <li>
+                <li style="text-align: right">
                     <img src="/cner/dc/driver/public/static/home/images/gzh.png">
                 </li>
-                <li>
+                <li style="text-align: right">
                     <img src="/cner/dc/driver/public/static/home/images/wx.png">
                 </li>
             </ul>
