@@ -13,43 +13,44 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui/css/H-ui.min.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui.admin/css/H-ui.admin.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/lib/Hui-iconfont/1.0.8/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/lib/layui/css/layui.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui.admin/css/style.css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="__PUBLIC__/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>七大优势管理</title>
+<title>网站配置管理</title>
 </head>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
 	<span class="c-gray en">&gt;</span>
-	七大优势
+	网站配置管理
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 </nav>
 <div class="page-container">
-	<div class="cl pd-5 bg-1 bk-gray mt-20">
-		<span class="l">
-		<a class="btn btn-primary radius" onclick="product_add('添加栏目','{:url('add')}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加广告</a>
-		</span>
-	</div>
 	<div class="mt-20">
 		<table class="table table-border table-bordered table-hover table-bg table-sort">
 			<thead>
 				<tr class="text-c">
-					<th>缩略图</th>
-					<th>标题</th>
+					<th>网站名称</th>
+					<th>网站简介</th>
+					<th>网站关键词</th>
+					<th>版权信息</th>
+					<th>公司电话</th>
 					<th width="100">操作</th>
 				</tr>
 			</thead>
 			<tbody>
-			{volist name="gn" id="g"}
+			{volist name="cf" id="c" }
 				<tr class="text-c">
-					<td class="text-c"><img src="{$g.img}" height="100px"></td>
-					<td>{$g.title}</td>
-					<td class="f-14">
-						<a title="编辑" href="javascript:;" onclick="product_edit('栏目编辑','{:url('edit',['id'=>$g.id])}',{$g.id},'700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-					</td>
+					<td>{$c.name}</td>
+					<td>{$c.des}</td>
+					<td>{$c.key}</td>
+					<td>{$c.copyright}</td>
+					<td>{$c.phone}</td>
+					<td class="f-14"><a title="编辑" href="javascript:;" onclick="product_edit('文章编辑','{:url('edit',['id'=>$c.id])}',{$c.id},'700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+						</td>
 				</tr>
             {/volist}
 			</tbody>
@@ -65,9 +66,17 @@
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="__PUBLIC__/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 <script type="text/javascript" src="__PUBLIC__/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="__PUBLIC__/lib/layui/layui.js"></script>
 <script type="text/javascript">
 
+/*系统-栏目-添加*/
+function system_category_add(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+/*系统-栏目-编辑*/
+function system_category_edit(title,url,id,w,h){
+	layer_show(title,url,w,h);
+}
 /*产品-编辑*/
 function product_edit(title,url,id){
 	var index = layer.open({

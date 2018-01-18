@@ -1,17 +1,17 @@
 <?php
 namespace app\cner\controller;
-class Assess extends Common{
-    public function index(){
-        $res=db('assess')->paginate(10);
-        $this->assign('as',$res);
-        return $this->fetch();
-    }
-    public function add(){
+class Yard extends Common{
+	public function index(){
+		$res=db('yard')->select();
+		$this->assign('cr',$res);
+		return $this->fetch();
+	}
+	public function add(){
         if(request()->isAjax()){
             $input=input('post.');
             $validate=validate('Validates');
-            if($validate->scene('addAssess')->check($input)){
-                $res=db('assess')->insert($input);
+            if($validate->scene('addYard')->check($input)){
+                $res=db('yard')->insert($input);
                 if($res){
                     return show(1,'添加成功');
                 }else{
@@ -29,8 +29,8 @@ class Assess extends Common{
             $input=input('post.');
             $id=input('get.id');
             $validate=validate('Validates');
-            if($validate->scene('addAssess')->check($input)){
-                $res=db('assess')->where('id',$id)->update($input);
+            if($validate->scene('addYard')->check($input)){
+                $res=db('yard')->where('id',$id)->update($input);
                 if($res){
                     return show(1,'修改成功');
                 }else{
@@ -40,15 +40,15 @@ class Assess extends Common{
                 return show(0,$validate->getError());
             }
         }else{
-            $id=input('get.id');
-            $res=db('assess')->where('id',$id)->find();
-            $this->assign('a',$res);
+        	$id=input('get.id');
+        	$res=db('yard')->where('id',$id)->find();
+        	$this->assign('y',$res);
             return $this->fetch();
         }
     }
     public function delete(){
         $id=input('get.id');
-        $res=db('assess')->where('id',$id)->delete();
+        $res=db('yard')->where('id',$id)->delete();
         if($res){
             return true;
         }else{

@@ -25,7 +25,7 @@
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
 
-<title>班型设置</title>
+<title>网站配置设置</title>
 </head>
 <body>
 <div class="page-container">
@@ -34,40 +34,45 @@
 			<div class="tabCon">
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">
-						学员名称：</label>
+						网站名称：</label>
 					<div class="formControls col-xs-8 col-sm-6">
-						<input type="text" class="input-text" value="" placeholder="" id="" name="name">
+						<input type="text" class="input-text" value="{$cf.name}" placeholder="" id="" name="name">
 					</div>
 					<div class="col-3">
 					</div>
 				</div>
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">
-						学员学校：</label>
+						网站简介：</label>
 					<div class="formControls col-xs-8 col-sm-6">
-						<input type="text" class="input-text" value="" placeholder="" id="" name="school">
+						<textarea class="textarea" name="des">{$cf.des}</textarea>
 					</div>
 					<div class="col-3">
 					</div>
 				</div>
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">
-						学员头像：</label>
-					<div class="formControls col-xs-8 col-sm-9">
-						<div class="uploader-thum-container">
-							<input type="hidden"  placeholder="" id="main_img_url" name="face" value="">
-							<div id="fileList" class="uploader-list"></div>
-							<div id="filePicker">选择图片</div>
-							<div style="clear: both"></div>
-							<img src="" id="thumb" style="display: none;width: 400px">
-						</div>
+						网站关键词：</label>
+					<div class="formControls col-xs-8 col-sm-6">
+						<textarea class="textarea" name="key">{$cf.key}</textarea>
+					</div>
+					<div class="col-3">
 					</div>
 				</div>
 				<div class="row cl">
 					<label class="form-label col-xs-4 col-sm-2">
-						学员评论：</label>
+						版权信息：</label>
 					<div class="formControls col-xs-8 col-sm-6">
-						<textarea id="content" name="a_content"></textarea>
+						<input type="text" class="input-text" value="{$cf.copyright}" placeholder="" id="" name="copyright">
+					</div>
+					<div class="col-3">
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2">
+						公司电话：</label>
+					<div class="formControls col-xs-8 col-sm-6">
+						<input type="text" class="input-text" value="{$cf.phone}" placeholder="" id="" name="phone">
 					</div>
 					<div class="col-3">
 					</div>
@@ -101,8 +106,7 @@
 
 	//实例化编辑器
 	//建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-	UE.getEditor('content',{initialFrameWidth:823,initialFrameHeight:400,wordCount:true,maximumWords:150});
-
+	UE.getEditor('content',{initialFrameWidth:823,initialFrameHeight:400,});
 </script>
 <script type="text/javascript">
 $(function(){
@@ -168,7 +172,7 @@ $(function(){
 		$(data).each(function(i){
 			postData[this.name]=this.value;
 		});
-		var url="{:url('add')}";
+		var url="{:url('edit',['id'=>$cf.id])}";
 		var jump="{:url('index')}";
 		$.post(url,postData,function(res){
 			if(res.status==1){

@@ -27,6 +27,15 @@ class Validates extends Validate
         ['time','require','时间不能为空'],
         ['address','require','地址不能为空'],
         ['phone','require','电话不能为空'],
+        ['key','require','关键词不能为空'],
+        ['copyright','require','版权信息不能为空'],
+        ['o_password','require','原密码不能为空'],
+        ['n_password','require','新密码不能为空'],
+        ['password','require|confirm:n_password','请确认密码|确认密码与新密码不一致'],
+        ['province','require','所属省份不能为空'],
+        ['city','require','所属城市不能为空'],
+        ['district','require','所属区县不能为空'],
+        ['point','require','坐标不能为空'],
     ];
     protected $scene=[
         'login'=>['account','pass','code'],
@@ -41,5 +50,8 @@ class Validates extends Validate
         'addAboutme'=>['content'],
         'addLeader'=>['img','type','des','sort'],
         'addJoinme'=>['content','name','phone','address','time'],
+        'editConf'=>['name','key','des','phone'],
+        'checkpass'=>['o_password','n_password','password'],
+        'addYard'=>['title','province','city','district','point'],
     ];
 }

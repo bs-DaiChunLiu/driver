@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="keywords" content="{$cf.key}">
+    <meta name="description" content="{$cf.des}" />
     <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/index.css"/>
     <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/base.css">
     <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/version.css">
     <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/map.css">
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=coutX13A0Ps5YoiMbpVWsCCjsWBHDoQ7"></script>
-    <title>叮叮驾校</title>
+    <title>{$cf.name}--学车场地</title>
 </head>
 <body>
 <div class="header">
@@ -26,7 +28,7 @@
         </ul>
     </div>
     <div class="rj"></div>
-    <div class="phone">400-188-3382</div>
+    <div class="phone">{$cf.phone}</div>
 </div>
 <div class="y_map"id="map"></div>
 <div class="ed-map">
@@ -37,18 +39,18 @@
     <div class="sel-map mt15" id="trainplaceList">
         <div class="smti">
             <ul class="clearfix">
-                <li><div class="ct"><span class="selectPlace">城市：成都市</span><i class="ico ico13"></i></div></li>
-                <li><div class="at"><span class="selectPlace" id="selectedDistrict">区域：全部</span><i class="ico ico13"></i></div></li>
+                <li><div class="ct selectPlace" style="cursor: pointer;"><span >城市：成都市</span><i class="ico ico13"></i></div></li>
+                <li><div class="at selectPlace" style="cursor: pointer;"><span id="selectedDistrict">区域：全部</span><i class="ico ico13"></i></div></li>
             </ul>
         </div>
         <div class="smci">
-            <ul id="trainplaceContainer" style="overflow:auto;">
-                <!--<li>-->
-                <!--<i class="ico ico15">1</i>-->
-                <!--<p class="sti">西南机动车驾驶员培训中心</p>-->
-                <!--<p>重庆市渝北区金渝大道99号汽博中心汽... </p>-->
-                <!--<p>电话：13883349681</p>-->
-                <!--</li>-->
+            <ul id="trainplaceContainer" style="overflow:auto;display: none;">
+                <li>
+                <!--<i class="ico ico15">1</i>
+                <p class="sti">西南机动车驾驶员培训中心</p>
+                <p>重庆市渝北区金渝大道99号汽博中心汽... </p>
+                <p>电话：13883349681</p>
+                </li>-->
             </ul>
             <div id="selectPanel" style="width: 100%; height: 300px; display: none;">
                 <div style="float: left; width: 50%;">
@@ -81,12 +83,7 @@
             addInfoWindow(maker, markerArr[i], i);
         }
     }
-    var markerArr = [
-        { title: "名称：四川大学", point: "104.088119,30.637545", address: "四川省成都市武侯区一环路南一段24号 ", tel: "12306" },
-        { title: "名称：成都理工大学", point: "104.15048,30.680737", address: "四川省成都市成华区三环以内二仙桥东三路1号  ", tel: "18500000000" },
-        { title: "名称：成都师范学院", point: "103.835572,30.682091", address: "四川省成都市温江区海科路东段99号 ", tel: "18500000000" },
-        { title: "名称：四川师范大学", point: "104.129339,30.615519", address: "四川省成都市锦江区静安路5号 ", tel: "18500000000" }
-    ];
+    var markerArr ={$point};
     function createMap(){
         map = new BMap.Map("map");
         map.centerAndZoom(new BMap.Point(104.084009,30.683551),12);
@@ -122,10 +119,9 @@
         map.addControl(overviewControl);
     }
     function addMarker(point, index) {
-        var myIcon = new BMap.Icon("http://api.map.baidu.com/img/markers.png",
-                new BMap.Size(23, 25), {
-                    offset: new BMap.Size(10, 25),
-                    imageOffset: new BMap.Size(0, 0 - index * 25)
+        var myIcon = new BMap.Icon("/cner/dc/driver/public/static/home/images/markers.png",
+                new BMap.Size(32, 32), {
+                    offset: new BMap.Size(10, 10),
                 });
         var marker = new BMap.Marker(point, { icon: myIcon });
         map.addOverlay(marker);
@@ -135,7 +131,7 @@
     // 添加信息窗口
     function addInfoWindow(marker, poi) {
         //pop弹窗标题
-        var title = '<div style="font-weight:bold;color:#CE5521;font-size:14px">' + poi.title + '</div>';
+        var title = '<div style="font-weight:bold;color:#CE5521;font-size:14px">名称' + poi.title + '</div>';
         //pop弹窗信息
         var html = [];
         html.push('<table cellspacing="0" style="table-layout:fixed;width:100%;font:12px arial,simsun,sans-serif"><tbody>');
@@ -162,6 +158,11 @@
         window.onresize=function(){
             $('#map').css('height', document.documentElement.clientHeight);
         };
+         $('.selectPlace').click(function () {
+            $('#trainplaceContainer').hide();
+            $('#selectPanel').show();
+        })
+    
 
         //显示区县选择框
         var clickIndex = -1;
@@ -169,8 +170,9 @@
             $('#province').append('<li>' + pro + '</li>');
             if (Array.isArray(provinceDic[pro])) {
                 provinceDic[pro].forEach(function (district, index) {
-                    $('#district').append('<li style="padding: 10px;" id=' + ("district" + index) + '>' + district + '</li>');
+                    $('#district').append('<li style="padding: 10px;cursor:pointer" id=' + ("district" + index) + '>' + district + '</li>');
                     $('#district' + index).click(function () {
+                        
                         $('#selectedDistrict').html('区域：' + district);
                         $('#trainplaceContainer').show();
                         $('#selectPanel').hide();
@@ -188,20 +190,16 @@
             }
         });
 
-        $('.selectPlace').click(function () {
-            $('#trainplaceContainer').hide();
-            $('#selectPanel').show();
-        })
 
 //        getCurrentLocatin();
 
         //获取场地信息
-        getTrainplaceByAddress('四川省', '成都市', null, afterGetTrainplace);
+        
 
         //场地信息获取成功执行的方法
         function afterGetTrainplace(data) {
             //添加到显示栏中
-            var trainplaceList = data.data.data;
+            var trainplaceList = JSON.parse(data);
             if (Array.isArray(trainplaceList)) {
                 var trainplaceNum = trainplaceList.length;
                 var height = trainplaceNum * 100;
@@ -213,7 +211,7 @@
                 trainplaceList.forEach(function (trainplace, index) {
                     $('#trainplaceContainer').append('<li>' +
                             '<i class="ico ico15">' + (parseInt(index) + 1) + '</i>' +
-                            '<p class="sti">' + trainplace.name + '</p>' +
+                            '<p class="sti">' + trainplace.title + '</p>' +
                             '<p>' + trainplace.address +  '</p>' +
 //                        '<p>' + '电话：' + trainplace.contact_person_phone + '</p>' +
                             '</li>');
@@ -222,7 +220,47 @@
                 alert('训练场地获取失败，请稍候再试');
             }
         }
-
+        /*
+ * 获取场地分布信息
+ * */
+function getTrainplaceByAddress(province, city, district, cb) {
+        var url='/cner/dc/driver/index/index/getYardByDistrict';
+        var data={'province':province, 'city':city, 'district':district};
+       $.post(url,data,function (res) {
+                var obj = new Function("return" + res)();
+                if(obj.err == 0){
+                    map.clearOverlays();
+                }
+                var trainplaceList = JSON.parse(res);
+                //删除所有定位点
+                var allTrainplaceMarkers = JSON.parse(res);
+                allTrainplaceMarkers.forEach(function (marker) {
+                    map.clearOverlays();
+                });
+                trainplaceList.forEach(function (trainplace) {
+                    addMarker(trainplace);
+                });
+                if (typeof cb === 'function') {
+                    cb(res);
+                }
+    });
+        
+}
+function addMarker(info){
+    var p0 = info.point.split(",")[0];
+    var p1 = info.point.split(",")[1];
+    var myIcon = new BMap.Icon("/cner/dc/driver/public/static/home/images/markers.png",
+            new BMap.Size(32, 32), {
+                offset: new BMap.Size(10, 10),
+            });
+    var marker = new BMap.Marker(new window.BMap.Point(p0, p1), { icon: myIcon });
+    map.addOverlay(marker);
+    markerArr={
+        'title' :info.title,
+        'address' :info.address,
+    }
+    addInfoWindow(marker,markerArr);
+}
         //调用输入完成提示功能
         autoComplete();
 
@@ -241,5 +279,54 @@
             }
         })
     });
+ function addInfoWindow(marker, poi) {
+        //pop弹窗标题
+        var title = '<div style="font-weight:bold;color:#CE5521;font-size:14px">名称' + poi.title + '</div>';
+        //pop弹窗信息
+        var html = [];
+        html.push('<table cellspacing="0" style="table-layout:fixed;width:100%;font:12px arial,simsun,sans-serif"><tbody>');
+        html.push('<tr>');
+        html.push('<td style="vertical-align:top;line-height:16px;width:38px;white-space:nowrap;word-break:keep-all">地址:</td>');
+        html.push('<td style="vertical-align:top;line-height:16px">' + poi.address + ' </td>');
+        html.push('</tr>');
+        html.push('</tbody></table>');
+        var infoWindow = new BMap.InfoWindow(html.join(""), { title: title, width: 200 });
+
+        var openInfoWinFun = function () {
+            marker.openInfoWindow(infoWindow);
+        };
+        marker.addEventListener("mouseover", openInfoWinFun);
+        return openInfoWinFun;
+    }
+    function getCoordsByAddress(province, address) {
+    if (typeof address === 'string' && address.length > 0) {
+        // 创建地址解析器实例
+        var myGeo = new BMap.Geocoder();
+        // 将地址解析结果显示在地图上,并调整地图视野
+        myGeo.getPoint(address, function(point){
+            if (point) {
+                if (expireStudyLoc) {
+                    map.removeOverlay(expireStudyLoc);
+                }
+                var myIcon = new BMap.Icon("/cner/dc/driver/public/static/home/images/markers.png", new BMap.Size(30, 30));
+                map.centerAndZoom(point, 13.5);
+                expireStudyLoc = new BMap.Marker(point, {icon: myIcon});  // 创建标注
+                // var mk = new BMap.Marker(pt);  // 创建标注
+                map.addOverlay(expireStudyLoc);
+
+                var label = new BMap.Label("希望学车地点",{offset:new BMap.Size(20,-10)});
+                expireStudyLoc.setLabel(label);
+
+                expireStudyLoc.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+            }else{
+                alert("您选择地址没有解析到结果!");
+            }
+        }, province);
+    } else {
+        alert('请输入地址字符串');
+    }
+}
+
 </script>
 </html>

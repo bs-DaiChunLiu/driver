@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="keywords" content="{$cf.key}">
+    <meta name="description" content="{$cf.des}" />
     <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/index.css"/>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=coutX13A0Ps5YoiMbpVWsCCjsWBHDoQ7"></script>
-    <title>叮叮驾校</title>
+    <title>{$cf.name}</title>
 </head>
 <body>
   <div class="header">
@@ -23,13 +25,13 @@
           </ul>
       </div>
       <div class="rj"></div>
-      <div class="phone">400-188-3382</div>
+      <div class="phone">{$cf.phone}</div>
   </div>
 
 <div class="head_des">
     <img src="/cner/dc/driver/public/static/home/images/d.jpg">
     <div class="head_banner">
-        <div class="hl"><input name="" type="text" placeholder="输入手机号，立即免费试学"><button type="button" id="" name="">立即咨询</button></div>
+        <div class="hl"><form method="post" id="form1"><input id="phones" name="phone" type="text" placeholder="输入手机号，立即免费试学"><input type="button" value="立即咨询" id="btn" name=""></form></div>
         <img src="{$aderh.img}">
     </div>
     <div class="gj">
@@ -57,13 +59,24 @@
             <div class="bz_rc">
                 <div class="bx-li">
                     <ul class="clearfix">
-                        {volist name="e" id="es"}
                         <li>
-                            <p style="width: 50px;height: 50px;text-align: center;margin: 0 auto"><img src="{$es.img}"></p>
-                            <p class="ti">{$es.title}</p>
-                            {$es.content}
+                            <p style="width: 50px;height: 50px;text-align: center;margin: 0 auto"><img src="/cner/dc/driver/public/images/ensure/5a5b5682d3df6.png"></p>
+                            <p class="ti">学员评分制</p>
+                            <p class="ci">学员毕业后可对教员打分</p>
+                            <p class="ci">教员收入与评分挂钩</p>
                         </li>
-                        {/volist}
+                        <li>
+                            <p style="width: 50px;height: 50px;text-align: center;margin: 0 auto"><img src="/cner/dc/driver/public/images/ensure/5a5b5aba7ff0c.png"></p>
+                            <p class="ti">七天无条件退款</p>
+                            <p class="ci">七天内任何不满意</p>
+                            <p class="ci">无条件退款</p>
+                        </li>
+                        <li>
+                            <p style="width: 50px;height: 50px;text-align: center;margin: 0 auto"><img src="/cner/dc/driver/public/images/ensure/5a5b5ae3caf58.png"></p>
+                            <p class="ti">省创业中心孵化企业</p>
+                            <p class="ci">省政府、教育厅、人社厅</p>
+                            <p class="ci">等部门支持企业</p>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -77,26 +90,62 @@
             <div class="gj_h">七大优势</div>
             <div class="gj_r"><img src="/cner/dc/driver/public/static/home/images/gr.png"></div>
         </div>
-        {volist name="g" id="gs"}
-        {if condition="$key%2 neq 0"}
         <div class="qs">
+            <div class="qs_i"><img src="/cner/dc/driver/public/images/ensure/5a5b61e140516.png"></div>
             <div class="qs_w">
-                <p class="qs_wsl">{$gs.title}</p>
-                {$gs.content}
-            </div>
-            <div class="qs_i"><img src="{$gs.img}"></div>
-        </div>
-        {/if}
-        {if condition="$key%2 eq 0"}
-        <div class="qs">
-            <div class="qs_i"><img src="{$gs.img}"></div>
-            <div class="qs_w">
-                <p class="qs_ws">{$gs.title}</p>
-                {$gs.content}
+                <p class="qs_ws">首创报销补考费</p>
+                <p class="qs_wc">成都首家免补考费的驾校</p>
+                <p class="qs_wc">考个试内心毫无波动，甚至还有点想撩学车小天使！</p>
             </div>
         </div>
-        {/if}
-        {/volist}
+        <div class="qs">
+            <div class="qs_w">
+                <p class="qs_wsl">分期付款</p>
+                <p class="qs_wcl">首付1800即可学车</p>
+                <p class="qs_wcl">叮叮内部分期无利息，靠谱</p>
+            </div>
+            <div class="qs_i"><img src="/cner/dc/driver/public/images/ensure/5a5b620e9ba36.png"></div>
+        </div>
+        <div class="qs">
+            <div class="qs_i"><img src="/cner/dc/driver/public/images/ensure/5a5b62363f590.png"></div>
+            <div class="qs_w">
+                <p class="qs_ws">学员福利黄卡</p>
+                <p class="qs_wc">持黄卡到叮叮合作商家消费可获得专属优惠</p>
+                <p class="qs_wc">要的就是特权！</p>
+            </div>
+        </div>
+        <div class="qs">
+            <div class="qs_w">
+                <p class="qs_wsl">一站式接送服务</p>
+                <p class="qs_wcl">体检、照相、练车、考试，一站式接送和陪同</p>
+                <p class="qs_wcl">就是要做驾考界的海底捞</p>
+            </div>
+            <div class="qs_i"><img src="/cner/dc/driver/public/images/ensure/5a5b6250b2253.png"></div>
+        </div>
+        <div class="qs">
+            <div class="qs_i"><img src="/cner/dc/driver/public/images/ensure/5a5b6269c81df.png"></div>
+            <div class="qs_w">
+                <p class="qs_ws">大学生专属</p>
+                <p class="qs_wc">学员都是大学生，练车交友两不误</p>
+                <p class="qs_wc">再也遇不到怪蜀黍怪阿姨啦！</p>
+            </div>
+        </div>
+        <div class="qs">
+            <div class="qs_w">
+                <p class="qs_wsl">直营连锁驾校</p>
+                <p class="qs_wcl">总部直营车辆和教练，标准教学，标准服务</p>
+                <p class="qs_wcl">分分钟让你成车神</p>
+            </div>
+            <div class="qs_i"><img src="/cner/dc/driver/public/images/ensure/5a5b628a246f3.png"></div>
+        </div>
+        <div class="qs">
+            <div class="qs_i"><img src="/cner/dc/driver/public/images/ensure/5a5b62aec0a0b.png"></div>
+            <div class="qs_w">
+                <p class="qs_ws">小天使服务</p>
+                <p class="qs_wc">一对一学车小天使，学车问题1小时内处理</p>
+                <p class="qs_wc">学车全程陪伴任你撩！</p>
+            </div>
+        </div>
     </div>
     <div style="clear: both"></div>
     <!--学车班型-->
@@ -177,17 +226,43 @@
         </div>
         <div style="height: 50px;width: 100%"></div>
         <div class="pj">
-            {volist name="as" id="a"}
+
             <div class="pj_d">
                 <div class="pj_d1">
-                    <div class="pj_i"><img src="{$a.face}"></div>
+                    <div class="pj_i"><img src="/cner/dc/driver/public/images/ader/5a5c26cff19e8.png"></div>
                     <div class="pj_t">
-                        <p><span style="font-size: 24px;font-weight: bold">{$a.name}&nbsp</span>/{$a.school}</p>
-                        <span class="pj_sp">{$a.a_content}</span>
+                        <p><span style="font-size: 24px;font-weight: bold">张华&nbsp</span>/四川大学锦江学院</p>
+                        <span class="pj_sp">学车的过程是温暖有趣的，与两位罗教练从初识到结识从而成为朋友，对我来说，非常的幸运并且心怀感恩，无论是学车技巧上，还是生活中而言，亦是良师也是益友。在学车过程中，大家相处的氛围非常的轻松融洽，很开心融入这个大家庭，学车生涯告一段落啦，但我们友谊不散。</span>
                     </div>
                 </div>
             </div>
-            {/volist}
+            <div class="pj_d">
+                <div class="pj_d1">
+                    <div class="pj_i"><img src="/cner/dc/driver/public/images/ader/5a5c26fe217ef.png"></div>
+                    <div class="pj_t">
+                        <p><span style="font-size: 24px;font-weight: bold">刘钟林&nbsp</span>/四川托普信息技术职业学院</p>
+                        <span class="pj_sp">我们场地有三个叮叮的师傅，其中一个李教是我觉得最好的教练，一个幽默的教练，对学员负责，而且也对学员很好，可以说是一个幽默的暖男吧，其他还有张教待我的次数不多，但也是很耐心指导的，另一个罗教很严格，一点失误都要挑出来，性格还是有点严肃的，但总体感觉还可以。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pj_d">
+                <div class="pj_d1">
+                    <div class="pj_i"><img src="/cner/dc/driver/public/images/ader/5a5c287c0eb65.png"></div>
+                    <div class="pj_t">
+                        <p><span style="font-size: 24px;font-weight: bold">张丽&nbsp</span>/四川大学锦江学院</p>
+                        <span class="pj_sp">我是我们学车班拿证最快的，一个多月就搞定驾照，主要都是教练教的很好啦，同班的学友都觉得邹教练是个耐心的暖男，记得有个同学把教练车给碰坏了，他一点不生气反而还安慰学员，真的是为叮叮的教练打call~</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pj_d">
+                <div class="pj_d1">
+                    <div class="pj_i"><img src="/cner/dc/driver/public/images/ader/5a5c28bda334c.png"></div>
+                    <div class="pj_t">
+                        <p><span style="font-size: 24px;font-weight: bold">冯春蓉&nbsp</span>/四川大学锦江学院</p>
+                        <span class="pj_sp">接送很及时，我练车的时候是夏天，教练每天早上都会在后校门准时接我们，练完车又送我们回来，场地上偶尔会看到有其他驾校的师傅在骂人，但我们师傅从来不骂人，而且还会给你讲很多他的经历，教你一些生活哲学。</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!--媒体声音-->
@@ -216,6 +291,7 @@
 </body>
 <script src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script src="__PUBLIC__/js/baiduMap.js"></script>
+<script type="text/javascript" src="__PUBLIC__/layer/2.4/layer.js"></script>
 <!--百度地图-->
 <script type="text/javascript">
     function initMap(){
@@ -230,12 +306,7 @@
             addInfoWindow(maker, markerArr[i], i);
         }
     }
-    var markerArr = [
-        { title: "名称：四川大学", point: "104.088119,30.637545", address: "四川省成都市武侯区一环路南一段24号 ", tel: "12306" },
-        { title: "名称：成都理工大学", point: "104.15048,30.680737", address: "四川省成都市成华区三环以内二仙桥东三路1号  ", tel: "18500000000" },
-        { title: "名称：成都师范学院", point: "103.835572,30.682091", address: "四川省成都市温江区海科路东段99号 ", tel: "18500000000" },
-        { title: "名称：四川师范大学", point: "104.129339,30.615519", address: "四川省成都市锦江区静安路5号 ", tel: "18500000000" }
-    ];
+    var markerArr = {$point};
     function createMap(){
         map = new BMap.Map("map");
         map.centerAndZoom(new BMap.Point(104.084009,30.683551),12);
@@ -280,7 +351,7 @@
     // 添加信息窗口
     function addInfoWindow(marker, poi) {
         //pop弹窗标题
-        var title = '<div style="font-weight:bold;color:#CE5521;font-size:14px">' + poi.title + '</div>';
+        var title = '<div style="font-weight:bold;color:#CE5521;font-size:14px">名称：' + poi.title + '</div>';
         //pop弹窗信息
         var html = [];
         html.push('<table cellspacing="0" style="table-layout:fixed;width:100%;font:12px arial,simsun,sans-serif"><tbody>');
@@ -299,5 +370,47 @@
     }
     var map;
     initMap();
+</script>
+<script>
+    $('#btn').click(function(){
+        var data=$('#form1').serializeArray();
+        var postData={};
+        $(data).each(function(i){
+            postData[this.name]=this.value;
+        });
+        var url="{:url('Index/postman')}";
+        var jump="{:url('index')}";
+        $.post(url,postData,function(res){
+            if(res.status==1){
+                layer.alert(res.message, {
+                    skin: 'layui-layer-lan'
+                    ,closeBtn: 0
+                    ,anim: 4 //动画类型
+                });
+            }else if(res.status==0){
+                layer.msg(res.message);
+            }
+        },'JSON');
+    })
+    $('#btn1').click(function(){
+        var data=$('#form2').serializeArray();
+        var postData={};
+        $(data).each(function(i){
+            postData[this.name]=this.value;
+        });
+        var url="{:url('Index/postman')}";
+        var jump="{:url('index')}";
+        $.post(url,postData,function(res){
+            if(res.status==1){
+                layer.alert(res.message, {
+                    skin: 'layui-layer-lan'
+                    ,closeBtn: 0
+                    ,anim: 4 //动画类型
+                });
+            }else if(res.status==0){
+                layer.msg(res.message);
+            }
+        },'JSON');
+    })
 </script>
 </html>

@@ -54,11 +54,7 @@
 			<dd>
 				<ul>
 					<li><a data-href="{:url('Ader/index')}" data-title="广告管理" href="javascript:void(0)">广告管理</a></li>
-					<li><a data-href="{:url('Suggest/index')}" data-title="公司介绍" href="javascript:void(0)">公司介绍</a></li>
-					<li><a data-href="{:url('Ensure/index')}" data-title="三大保障" href="javascript:void(0)">三大保障</a></li>
-					<li><a data-href="{:url('Goodness/index')}" data-title="七大优势" href="javascript:void(0)">七大优势</a></li>
 					<li><a data-href="{:url('Carclass/index')}" data-title="学车班型" href="javascript:void(0)">学车班型</a></li>
-                    <li><a data-href="{:url('Assess/index')}" data-title="学员评价" href="javascript:void(0)">学员评价</a></li>
 					<li><a data-href="{:url('Medium/index')}" data-title="媒体声音" href="javascript:void(0)">媒体声音</a></li>
 			</ul>
 		</dd>
@@ -90,19 +86,27 @@
 			</dd>
 		</dl>
 		<dl id="menu-tongji">
-			<dt><i class="Hui-iconfont">&#xe6a3;</i> 联系我们管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe6a3;</i> 咨询信息管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{$Think.config.cc_url}/cner/callme" data-title="联系我们管理" href="javascript:void(0)">联系我们管理</a></li>
+					<li><a data-href="{:url('Callme/index')}" data-title="联系我们管理" href="javascript:void(0)">咨询信息管理</a></li>
 				</ul>
 		</dd>
 	</dl>
+	<dl id="menu-conf">
+			<dt><i class="Hui-iconfont">&#xe62d;</i> 学车场地管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{:url('Yard/index')}" data-title="场地列表" href="javascript:void(0)">场地列表</a></li>
+				</ul>
+			</dd>
+		</dl>
 		<dl id="menu-conf">
 			<dt><i class="Hui-iconfont">&#xe62d;</i> 网站配置管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{$Think.config.cc_url}/cner/conf/index" data-title="网站配置管理" href="javascript:void(0)">配置列表</a></li>
-					<li><a data-href="{$Think.config.cc_url}/cner/index/checkpass" data-title="密码管理" href="javascript:void(0)">修改密码</a></li>
+					<li><a data-href="{:url('Conf/index')}" data-title="网站配置管理" href="javascript:void(0)">配置列表</a></li>
+					<li><a data-href="{:url('Index/checkpass')}" data-title="密码管理" href="javascript:void(0)">修改密码</a></li>
 				</ul>
 			</dd>
 		</dl>

@@ -13,38 +13,51 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui/css/H-ui.min.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui.admin/css/H-ui.admin.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/lib/Hui-iconfont/1.0.8/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/lib/layui/css/layui.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/h-ui.admin/css/style.css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="__PUBLIC__/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>三大保障管理</title>
+<title>场地管理</title>
 </head>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
 	<span class="c-gray en">&gt;</span>
-	三大保障
+	场地管理
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 </nav>
 <div class="page-container">
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+		<span class="l">
+		<a class="btn btn-primary radius" onclick="product_add('添加场地','{:url('add')}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加场地</a>
+		</span>
+	</div>
 	<div class="mt-20">
 		<table class="table table-border table-bordered table-hover table-bg table-sort">
 			<thead>
 				<tr class="text-c">
-					<th>缩略图</th>
-					<th>标题</th>
+					<th>场地名称</th>
+					<th>场地地址</th>
+					<th>场地电话</th>
+					<th>场地所属省份</th>
+					<th>场地所属城市</th>
+					<th>场地所属区县</th>
 					<th width="100">操作</th>
 				</tr>
 			</thead>
 			<tbody>
-			{volist name="en" id="e"}
+			{volist name="cr" id="c" }
 				<tr class="text-c">
-					<td class="text-c"><img src="{$e.img}" height="100px"></td>
-					<td>{$e.title}</td>
-					<td class="f-14">
-						<a title="编辑" href="javascript:;" onclick="product_edit('栏目编辑','{:url('edit',['id'=>$e.id])}',{$e.id},'700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-					</td>
+					<td>{$c.title}</td>
+					<td>{$c.address}</td>
+					<td>{$c.tel}</td>
+					<td>{$c.province}</td>
+					<td>{$c.city}</td>
+					<td>{$c.district}</td>
+					<td class="f-14"><a title="编辑" href="javascript:;" onclick="product_edit('场地编辑','{:url('edit',['id'=>$c.id])}',{$c.id},'700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+						<a title="删除" href="javascript:;" onclick="system_category_del(this,{$c.id})" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
             {/volist}
 			</tbody>
@@ -60,9 +73,38 @@
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="__PUBLIC__/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 <script type="text/javascript" src="__PUBLIC__/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="__PUBLIC__/lib/layui/layui.js"></script>
 <script type="text/javascript">
 
+/*系统-栏目-添加*/
+function system_category_add(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+/*系统-栏目-编辑*/
+function system_category_edit(title,url,id,w,h){
+	layer_show(title,url,w,h);
+}
+/*系统-栏目-删除*/
+function system_category_del(obj,id){
+	layer.confirm('确认要删除吗？',function(index){
+		$.ajax({
+			type: 'GET',
+			url: "{$Think.config.cc_url}/cner/yard/delete?id="+id,
+			dataType: 'json',
+			success: function(data){
+				$(obj).parents("tr").remove();
+				layer.msg('已删除!',{icon:1,time:1000});
+				setTimeout(function(){
+					window.location.reload();
+				},1000)
+
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});
+	});
+}
 /*产品-编辑*/
 function product_edit(title,url,id){
 	var index = layer.open({
