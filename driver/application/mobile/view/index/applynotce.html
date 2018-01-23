@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{$cf.name}--学车须知</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+<meta name="description" content="{$cf.des}">
+<meta name="keywords" content="{$cf.key}">
+<link href="" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/style.css">
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/about.css">
+</head>
+<body>
+    <div class="header">
+		<div class="logo">
+			<img src="{$Think.config.u}/static/mobile/images/logo.png">
+		</div>
+		<div class="meun">
+			<div class="meun-t">菜单</div>
+			<div class="meun-i" id="meun">
+				<img src="{$Think.config.u}/static/mobile/images/meun.png">
+			</div>
+		</div>
+	</div>
+	<div class="banner" id="banner">
+		<ul>
+			<li><a href="{:url('index')}">首页</a></li>
+			<li><a href="{:url('yard')}">场地分布</a></li>
+			<li><a href="{:url('applynotce')}" class="current1">学车须知</a></li>
+			<li><a href="{:url('aboutme')}">关于我们</a></li>
+		</ul>
+	</div>
+	<div class="bm">
+		<div class="gw-t">报名条件</div>
+		<div style="width: 100%;height: 60px"></div>
+		<div class="ti">
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-l.png"></div>
+				<div class="ti-t" style="font-weight: bold;">年龄条件</div>
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-r.png"></div>
+		</div>
+		<div class="sm">
+			<p>申请小型汽车、小型自动挡汽车</p>
+			<p>年龄在18周岁以上，70周岁以下</p>
+		</div>
+		<div style="width: 100%;height: 50px;"></div>
+		<div class="ti">
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-l.png"></div>
+				<div class="ti-t" style="font-weight: bold;">身体条件</div>
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-r.png"></div>
+		</div>
+		<div class="asm">
+			<p><span style="font-weight: bold;">1.申请小型汽车、小型自动挡汽车：</span>两眼裸视力或者矫正视力达到对数视力表4.9以上</p>
+			<p><span style="font-weight: bold;">2.辨色力：</span>无红绿色盲</p>
+			<p><span style="font-weight: bold;">3.听力：</span>两耳分别距音叉50厘米能辨别声源方向。有听力障碍但佩戴助听设备能达到以上条件的，可以申请小型汽车、小型自动挡汽车准驾车型的机动车驾驶证</p>
+			<p><span style="font-weight: bold;">4.上肢：</span>双手拇指健全，每只手其他手指必须有三指健全，肢体和手指运动功能正常。但手指末节残缺或者右手拇指缺失的，可以申请小型汽车、小型自动挡汽车准驾车型的机动车驾驶证</p>
+			<p><span style="font-weight: bold;">5.下肢：</span>双下肢健全且运动功能正常，不等长度不得大于5厘米。但左下肢缺失或者丧失运动能力的，可以申请小型自动挡汽车准驾车型的机动车驾驶证。右下肢、双下肢缺失或者丧失运动功能但能够自主左立的，可以申请残疾人专用小型自动挡载客汽车准驾车型的机动车驾驶证</p>
+			<p>6.躯干、颈部：无运动功能障碍</p>
+		</div>
+		<div style="width: 100%;height: 50px;"></div>
+		<div class="tis">
+				<div class="ti-is"><img src="{$Think.config.u}/static/mobile/images/ti-l.png"></div>
+				<div class="ti-ts" style="font-weight: bold;">以下情况不得申请</div>
+				<div class="ti-is"><img src="{$Think.config.u}/static/mobile/images/ti-r.png"></div>
+		</div>
+		<div class="asm">
+			<p>1.有器质性心脏病、癫痫病、美尼尔氏症、眩晕症、癔病、震荡麻痹、精神病、痴呆以及影响肢体活动的神经系统疾病等妨碍安全驾驶疾病的</p>
+			<p>2.三年内有吸毒、注射毒品行为或者解除强制隔离戒毒措施未满三年，或者长期服用依耐性精神药品成瘾尚未戒除的</p>
+			<p>3.造成交通事故后逃逸构成犯罪的</p>
+			<p>4.醉酒驾驶机动车或者饮酒后驾驶营运机动车依法被吊销机动车驾驶证未满五年的</p>
+			<p>5.醉酒驾驶营运机动车依法被吊销机动车驾驶证未满十年的</p>
+			<p>6.因其他情形依法被吊销机动车驾驶证未满两年的</p>
+			<p>7.驾驶许可依法被撤销未满三年的</p>
+			<p>8.法律、行政法规规定的其他情形</p>
+		</div>
+		<div style="width: 100%;height: 50px;"></div>
+		<div class="ti">
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-l.png"></div>
+				<div class="ti-t" style="font-weight: bold;">材料准备</div>
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-r.png"></div>
+		</div>
+		<div class="asm">
+			<p style="font-weight: bold;">（一）本地户口</p>
+			<p>1、身份证及复印件2份（正反面）</p>
+			<p>2、1寸白底照片4张（有回执单）</p>
+			<p>3、指定医院体检证明及体检表</p>
+			<p style="font-weight: bold;">（二）非本地户口</p>
+			<p>1、身份证及复印件2份（正反面）</p>
+			<p>2、居住证原件或者登记凭证复印件2份</p>
+			<p>3、指驾照体检表</p>
+		</div>
+	</div>
+	<div style="width: 100%;height: 50px;"></div>
+	<div class="blc">
+		<div class="ld-t">学车流程</div>
+		<div style="width: 100%;height: 60px"></div>
+		<div class="acl">
+			<div class="acll">
+				<div class="acll-i">
+			    <div class="acl-l">1</div>
+			    </div>
+			    <div class="acll-i">
+			    <div class="acl-l">2</div>
+			    </div>
+			    <div class="acll-i">
+			    <div class="acl-l">3</div>
+			    </div>
+			    <div class="acll-i">
+			    <div class="acl-l">4</div>
+			    </div>
+			    <div class="acll-i">
+			    <div class="acl-l">5</div>
+			    </div>
+			    <div class="acll-i">
+			    <div class="acl-l">6</div>
+			    </div>
+			    <div class="acll-i">
+			    <div class="acl-l">7</div>
+			    </div>
+		    </div>
+		    <div class="acls"></div>
+		    <div class="aclr">
+		    	<div class="acl-r">
+                    <p style="font-weight: bold;">办理居住证</p>
+                    <p>居住证一般在校内由小天使协助免费办理，若校内不可办由公司代办</p>
+		    	</div>
+		    	<div class="acl-r">
+                    <p style="font-weight: bold;">体检/照相/面签</p>
+                    <p>只需携带身份证原件，由教练一站式协助办理，半天可办理完毕</p>
+		    	</div>
+		    	<div class="acl-r">
+                    <p style="font-weight: bold;">科目一</p>
+                    <p>理论考试，90分合格，完成面签即可登录网站：http://www.scjj.gov.cn:121自主预约可下载软件“驾考宝典”刷题</p>
+		    	</div>
+		    	<div class="acl-r">
+                    <p style="font-weight: bold;">科目二</p>
+                    <p>场地驾驶培训，80分合格，科目一考试通过10天后即可预约，按教练课程安排，全部项目训练达标即可参加考试</p>
+		    	</div>
+		    	<div class="acl-r">
+                    <p style="font-weight: bold;">科目三</p>
+                    <p>道路驾驶培训，90分合格，科目一考试通过30天后即可预约，从预约之日起达7日可参加考试，所以最快37天可拿驾照</p>
+		    	</div>
+		    	<div class="acl-r">
+                    <p style="font-weight: bold;">科目四</p>
+                    <p>科目三安全文明考试，90分合格；科目三通过当天即可考试，若科目三通过当天不考，之后不用预约直接带身份证即可考试，可在“驾考宝典”刷题</p>
+		    	</div>
+		    	<div class="acl-r">
+                    <p style="font-weight: bold;">领取驾照</p>
+                    <p>通过科目四当天即可拿证</p>
+		    	</div>
+		    </div>
+		</div>
+	</div>
+	<div style="width: 100%;height: 50px;"></div>
+	<div class="cjwt">
+		<div class="ld-t">常见问题</div>
+		<div style="width: 100%;height: 60px"></div>
+		<div class="asm">
+			<p style="font-weight: bold;">1.叮叮驾考与一般驾考有什么不同？</p>
+			<p>叮叮驾考是专注大学生的校园连锁型驾校，为学生量身设计更好的学车方案，让学车不只是学车</p>
+			<p style="font-weight: bold;margin-top: 10px">2.报名缴费后还会收取其他费用吗？</p>
+			<p>会。体检费30元、照相费20元...该收的钱每笔都会在合同上注明，确保价格真实透明</p>
+			<p style="font-weight: bold;margin-top: 10px">3.怎么报名喃？</p>
+			<p>在首页输入联系方式，提交后学车天使会直接与您联系，上面或到叮叮报名点签署协议，当面付款</p>
+			<p style="font-weight: bold;margin-top: 10px">4.报名后多久拿证？</p>
+			<p>理想情况下，最快36天拿证：从报名到考科目一需7天，科一到科二需17天，科二到科三学13天，一次性通过情况下最快36天拿证</p>
+			<p style="font-weight: bold;margin-top: 10px">5.如何预约练车？</p>
+			<p>报名后会有专门的学员微信群，里面有学车天使、教学总监、教练等工作人员，在微信群内提前一天发消息预约即可</p>
+			<p style="font-weight: bold;margin-top: 10px">6.如何预约考试？</p>
+			<p>由教练与学员沟通协调考试时间后预约，若自己想单独参加考试，也可告知教练预约</p>
+			<p style="font-weight: bold;margin-top: 10px">7.学车过程中出现问题找谁？</p>
+			<p>找学车小天使。有学车问题，我们会在工作时间一小时内给出处理结果</p>
+			<p style="font-weight: bold;margin-top: 10px">8.价格可以优惠不？</p>
+			<p>首先报名价格为官方指导价格，我们会保证品质，但不接受议价</p>
+			<p style="font-weight: bold;margin-top: 10px">9.如何退款？</p>
+			<p>报名7天内可无条件退款，超过7天的退费细节可参考合同内容</p>
+		</div>
+	</div>
+	<div style="width: 100%;height: 50px;"></div>
+</body>
+<script src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+	$('#meun').click(function() {
+		$('#banner').toggle(1000);
+		if($(this).find('img').attr('src')=='{$Think.config.u}/static/mobile/images/meun.png'){  
+            $(this).find('img').attr('src','{$Think.config.u}/static/mobile/images/meun-x.png');  
+        }else{  
+            $(this).find('img').attr('src','{$Think.config.u}/static/mobile/images/meun.png');  
+        }  
+	});
+</script>
+</html>

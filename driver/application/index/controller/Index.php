@@ -2,7 +2,10 @@
 namespace app\index\controller;
 class Index extends Common
 {
-    public function index()
+    public function index(){
+        return $this->fetch();
+    }
+    public function home()
     {
         //广告
         $aderh=db('ader')->where('type','eq',0)->find();
@@ -70,11 +73,16 @@ class Index extends Common
     public function postman(){
         $data=input('post.');
         $data['create_time']=time();
-        $res=db('callme')->insert($data);
-        if($res){
-            return show(1,'请耐心等候，稍后会有客服与你联系！');
-        }else{
+        $validate=validate('Validates');
+        if($validate->scene('modile')->check($data)){
+           $res=db('callme')->insert($data);
+           if($res){
+               return show(1,'请耐心等候，稍后会有客服与你联系！');
+            }else{
             return show(0,'咨询失败');
+            }
+        }else{
+            return show(0,$validate->getError());
         }
     }
     public function getYardByDistrict(){

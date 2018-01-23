@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="{$cf.key}">
+	<meta name="description" content="{$cf.des}">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=coutX13A0Ps5YoiMbpVWsCCjsWBHDoQ7"></script>
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/style.css">
+	<title>{$cf.name}</title>
+</head>
+<body>
+	<div class="header">
+		<div class="logo">
+			<img src="{$Think.config.u}/static/mobile/images/logo.png">
+		</div>
+		<div class="meun">
+			<div class="meun-t">菜单</div>
+			<div class="meun-i" id="meun">
+				<img src="{$Think.config.u}/static/mobile/images/meun.png">
+			</div>
+		</div>
+	</div>
+	<div class="banner" id="banner">
+		<ul>
+			<li><a href="{:url('index')}" class="current">首页</a></li>
+			<li><a href="{:url('yard')}">场地分布</a></li>
+			<li><a href="{:url('applynotce')}">学车须知</a></li>
+			<li><a href="{:url('aboutme')}">关于我们</a></li>
+		</ul>
+	</div>
+	<div class="ader-h">
+		<img src="{$Think.config.u}/static/mobile/images/banner.png">
+		<a class="zx-r" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=859314714&site=qq&menu=yes"><img border="0" src="{$Think.config.u}/static/mobile/images/zx.png" alt="立即咨询" title="立即咨询"/></a>
+        <a class="zx-l" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=859314714&site=qq&menu=yes"><img border="0" src="{$Think.config.u}/static/mobile/images/zx-l.png" alt="立即咨询" title="立即咨询"/></a>
+	</div>
+	<div class="main">
+		<div class="auto">
+			<div class="ti">
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-l.png"></div>
+				<div class="ti-t">公司介绍</div>
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-r.png"></div>
+			</div>
+			<div class="js">
+				<p>叮叮驾考创办于2015年5月</p>
+				<p>是一所由企业和校园加盟商合资开办的校园直营连锁驾校</p>
+				<p>在成都已有数十个加盟校园团队</p>
+				<p>超过5000人，首创考试挂科免补考费</p>
+			</div>
+		</div>
+		<!-- 三大保障 -->
+		<div class="auto">
+			<div class="ti">
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-l.png"></div>
+				<div class="ti-t">三大保障</div>
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-r.png"></div>
+			</div>
+			<div class="bz">
+				<div class="bz-b">
+					<div class="bb-i">
+					<div class="bz-i"><img src="{$Think.config.u}/static/mobile/images/zan.png"></div>
+				    </div>
+					<div class="bz-t">学员毕业后评分体制 </div>
+				</div>
+			</div>
+			<div class="bz">
+				<div class="bz-b">
+					<div class="bb-i">
+					<div class="bz-i"><img src="{$Think.config.u}/static/mobile/images/qt.png"></div>
+				    </div>
+					<div class="bz-t">学员毕业后评分体制 </div>
+				</div>
+			</div>
+			<div class="bz">
+				<div class="bz-b">
+					<div class="bb-i">
+					<div class="bz-i"><img src="{$Think.config.u}/static/mobile/images/sc.png"></div>
+				    </div>
+					<div class="bz-t">学员毕业后评分体制 </div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<!-- 七大优势 -->
+		<div class="auto">
+			<div class="ti">
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-l.png"></div>
+				<div class="ti-t">七大优势</div>
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-r.png"></div>
+			</div>
+			<div class="ys">
+				<div class="ys-i fl"><img src="{$Think.config.u}/static/mobile/images/ys1.png"></div>
+				<div class="ys-t fr">
+					<p class="ys-p">首创报销补考费</p>
+					<p class="ys-p2">成都首家免补考费的驾校</p>
+					<p class="ys-p3">考个试内心毫无波动</p>
+					<p class="ys-p3">甚至还有点想撩学车小天使！</p>
+				</div>
+			</div>
+			<div class="ys">
+				<div class="ys-t fl">
+					<p class="ys-p">分期付款</p>
+					<p class="ys-p2">首付1800即可学车</p>
+					<p class="ys-p3">叮叮内部分期无利息，靠谱</p>
+				</div>
+				<div class="ys-i fr"><img src="{$Think.config.u}/static/mobile/images/ys2.png"></div>
+			</div>
+			<div class="ys">
+				<div class="ys-i fl"><img src="{$Think.config.u}/static/mobile/images/ys3.png"></div>
+				<div class="ys-t fr">
+					<p class="ys-p">学员福利黄卡</p>
+					<p class="ys-p2">持黄卡到叮叮合作商家消费</p>
+					<p class="ys-p3">可获得专属优惠</p>
+					<p class="ys-p3">要的就是特权！</p>
+				</div>
+			</div>
+			<div class="ys">
+				<div class="ys-t fl">
+					<p class="ys-p">一站式接送服务</p>
+					<p class="ys-p2">体检、照相、练车、考试</p>
+					<p class="ys-p3">一站式接送和陪同</p>
+					<p class="ys-p3">就是要做驾考界的海底捞</p>
+				</div>
+				<div class="ys-i fr"><img src="{$Think.config.u}/static/mobile/images/ys4.png"></div>
+			</div>
+			<div class="ys">
+				<div class="ys-i fl"><img src="{$Think.config.u}/static/mobile/images/ys5.png"></div>
+				<div class="ys-t fr">
+					<p class="ys-p">大学生专属</p>
+					<p class="ys-p2">学员都是大学生</p>
+					<p class="ys-p3">练车交友两不误</p>
+					<p class="ys-p3">再也遇不到怪蜀黍阿姨</p>
+				</div>
+			</div>
+			<div class="ys">
+				<div class="ys-t fl">
+					<p class="ys-p">直营连锁驾校</p>
+					<p class="ys-p2">总部直营车辆和教练</p>
+					<p class="ys-p3">标准教学，标准服务</p>
+					<p class="ys-p3">分分钟让你成车神</p>
+				</div>
+				<div class="ys-i fr"><img src="{$Think.config.u}/static/mobile/images/ys6.png"></div>
+			</div>
+			<div class="ys">
+				<div class="ys-i fl"><img src="{$Think.config.u}/static/mobile/images/ys7.png"></div>
+				<div class="ys-t fr">
+					<p class="ys-p">小天使服务</p>
+					<p class="ys-p2">一对一学车小天使</p>
+					<p class="ys-p3">学车问题1小时内处理</p>
+					<p class="ys-p3">学车全程陪伴任你撩</p>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<!-- 学车班型 -->
+		<div class="auto">
+			<div class="ti">
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-l.png"></div>
+				<div class="ti-t">学车班型</div>
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-r.png"></div>
+			</div>
+			<div class="bx">
+				<img src="{$Think.config.u}/static/mobile/images/bx1.png">
+			</div>
+			<div class="bx">
+				<img src="{$Think.config.u}/static/mobile/images/bx2.png">
+			</div>
+			<div class="bx">
+				<img src="{$Think.config.u}/static/mobile/images/bx3.png">
+			</div>
+		</div>
+		<div class="clear"></div>
+		<!-- 学车场地 -->
+		<div class="auto">
+			<div class="ti">
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-l.png"></div>
+				<div class="ti-t">学车场地</div>
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-r.png"></div>
+			</div>
+			<div class="map" id="map"></div>
+			<div class="map-btn"><a href="{:url('yard')}"><img src="{$Think.config.u}/static/mobile/images/map-btn.png"></a></div>
+		</div>
+		<div class="clear"></div>
+		<!-- 学员评价 -->
+		<div class="auto">
+			<div class="ti">
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-l.png"></div>
+				<div class="ti-t">学员评价</div>
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-r.png"></div>
+			</div>
+			<div class="xy">
+				<div class="xy-i"><img src="{$Think.config.u}/static/mobile/images/xy1.png"></div>
+				<div class="xy-t">
+					<p><span class="xy-n">张华</span><span class="xy-s">/四川大学锦江学院</span></p>
+					<p><span class="xy-c">学车的过程是温暖有趣的，与两位罗教练从初识到结识从而成为朋友，对我来说，非常的幸运并且心怀感恩，无论是学车技巧上，还是生活中而言，亦是良师也是益友。在学车过程中，大家相处的氛围非常的轻松融洽，很开心融入这个大家庭，学车生涯告一段落啦，但我们友谊不散。</span></p>
+				</div>
+			</div>
+			<div class="xy">
+				<div class="xy-i"><img src="{$Think.config.u}/static/mobile/images/xy2.png"></div>
+				<div class="xy-t">
+					<p><span class="xy-n">刘钟林</span><span class="xy-s">/四川托普信息技术职业学院</span></p>
+					<p><span class="xy-c">我们场地有三个叮叮的师傅，其中一个李教是我觉得最好的教练，一个幽默的教练，对学员负责，而且也对学员很好，可以说是一个幽默的暖男吧，其他还有张教待我的次数不多，但也是很耐心指导的，另一个罗教很严格，一点失误都要挑出来，性格还是有点严肃的，但总体感觉还可以。</span></p>
+				</div>
+			</div>
+			<div class="xy">
+				<div class="xy-i"><img src="{$Think.config.u}/static/mobile/images/xy3.png"></div>
+				<div class="xy-t">
+					<p><span class="xy-n">张丽</span><span class="xy-s">/四川大学锦城学院</span></p>
+					<p><span class="xy-c">我是我们学车班拿证最快的，一个多月就搞定驾照，主要都是教练教的很好啦，同班的学友都觉得邹教练是个耐心的暖男，记得有个同学把教练车给碰坏了，他一点不生气反而还安慰学员，真的是为叮叮的教练打call~</span></p>
+				</div>
+			</div>
+			<div class="xy">
+				<div class="xy-i"><img src="{$Think.config.u}/static/mobile/images/xy4.png"></div>
+				<div class="xy-t">
+					<p><span class="xy-n">冯春蓉</span><span class="xy-s">/四川大学锦江学院</span></p>
+					<p><span class="xy-c">接送很及时，我练车的时候是夏天，教练每天早上都会在后校门准时接我们，练完车又送我们回来，场地上偶尔会看到有其他驾校的师傅在骂人，但我们师傅从来不骂人，而且还会给你讲很多他的经历，教你一些生活哲学。</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="auto">
+			<div class="ti">
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-l.png"></div>
+				<div class="ti-t">媒体声音</div>
+				<div class="ti-i"><img src="{$Think.config.u}/static/mobile/images/ti-r.png"></div>
+			</div>
+			<div class="ms">
+				<img src="{$Think.config.u}/static/mobile/images/mt1.png">
+			</div>
+			<div class="ms">
+				<img src="{$Think.config.u}/static/mobile/images/mt2.png">
+			</div>
+			<div class="ms">
+			    <img src="{$Think.config.u}/static/mobile/images/mt3.png">
+			</div>
+			<div class="ms">
+				<img src="{$Think.config.u}/static/mobile/images/mt4.png">
+			</div>
+			<div class="map-btn"><a class="zx-l" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=859314714&site=qq&menu=yes"><img border="0" src="{$Think.config.u}/static/mobile/images/zxf.png" alt="立即咨询" title="立即咨询"/></a></div>
+			<div class="fi">
+				<div class="wx"><img src="{$Think.config.u}/static/mobile/images/gz.png"></div>
+				<div class="wx"><img src="{$Think.config.u}/static/mobile/images/wx.png"></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<!--百度地图-->
+<script type="text/javascript">
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMapOverlay();//向地图添加覆盖物
+        for (var i = 0; i < markerArr.length; i++) {
+            var p0 = markerArr[i].point.split(",")[0];
+            var p1 = markerArr[i].point.split(",")[1];
+            var maker = addMarker(new window.BMap.Point(p0, p1), i);
+            addInfoWindow(maker, markerArr[i], i);
+        }
+    }
+    var markerArr = {$point};
+    function createMap(){
+        map = new BMap.Map("map");
+        map.centerAndZoom(new BMap.Point(104.084009,30.683551),12);
+        for (var i = 0; i < markerArr.length; i++) {
+            var p0 = markerArr[i].point.split(",")[0];
+            var p1 = markerArr[i].point.split(",")[1];
+            var maker = addMarker(new window.BMap.Point(p0, p1));
+            addInfoWindow(maker, markerArr[i], i);
+        }
+    }
+    function setMapEvent(){
+        map.enableScrollWheelZoom();
+        map.enableKeyboard();
+        map.enableDragging();
+        map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+        target.addEventListener("click",function(){
+            target.openInfoWindow(window);
+        });
+    }
+    function addMapOverlay(){
+
+    }
+    //向地图添加控件
+    function addMapControl(){
+        var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+        scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+        map.addControl(scaleControl);
+        var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+        map.addControl(navControl);
+        var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:false});
+        map.addControl(overviewControl);
+    }
+    function addMarker(point) {
+        var myIcon = new BMap.Icon("/cner/dc/driver/public/static/home/images/markers.png", new BMap.Size(30,30));
+        var marker = new BMap.Marker(point,{icon:myIcon});
+        map.addOverlay(marker);
+        return marker;
+    }
+
+    // 添加信息窗口
+    function addInfoWindow(marker, poi) {
+        //pop弹窗标题
+        var title = '<div style="font-weight:bold;color:#CE5521;font-size:14px">名称：' + poi.title + '</div>';
+        //pop弹窗信息
+        var html = [];
+        html.push('<table cellspacing="0" style="table-layout:fixed;width:100%;font:12px arial,simsun,sans-serif"><tbody>');
+        html.push('<tr>');
+        html.push('<td style="vertical-align:top;line-height:16px;width:38px;white-space:nowrap;word-break:keep-all">地址:</td>');
+        html.push('<td style="vertical-align:top;line-height:16px">' + poi.address + ' </td>');
+        html.push('</tr>');
+        html.push('</tbody></table>');
+        var infoWindow = new BMap.InfoWindow(html.join(""), { title: title, width: 200 });
+
+        var openInfoWinFun = function () {
+            marker.openInfoWindow(infoWindow);
+        };
+        marker.addEventListener("mouseover", openInfoWinFun);
+        return openInfoWinFun;
+    }
+    var map;
+    initMap();
+</script>
+<script type="text/javascript">
+	$('#meun').click(function() {
+		$('#banner').toggle(1000);
+		if($(this).find('img').attr('src')=='{$Think.config.u}/static/mobile/images/meun.png'){  
+            $(this).find('img').attr('src','{$Think.config.u}/static/mobile/images/meun-x.png');  
+        }else{  
+            $(this).find('img').attr('src','{$Think.config.u}/static/mobile/images/meun.png');  
+        }  
+	});
+</script>
+</html>
